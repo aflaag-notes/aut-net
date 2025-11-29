@@ -5,7 +5,14 @@
 \contentsline {chapter}{\numberline {1}Q-routing literature review}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Q-routing}{3}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Classification criteria}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Context of use}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Network class and Assumptions}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Routing Optimization Context}{5}{subsection.2.1.2}%
-\contentsline {chapter}{Bibliography}{6}{Item.2}%
+\contentsline {section}{\numberline {2.1}Context of use}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Network class and Assumptions}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Routing Optimization Context}{6}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Unicast or Multicast}{7}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}QoS metrics for optimization}{7}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}QoS guaranteeing}{8}{subsection.2.1.5}%
+\contentsline {section}{\numberline {2.2}Design characteristics}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Learning model}{8}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Agent states and Action spaces}{8}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Solution space exploration}{9}{subsection.2.2.3}%
+\contentsline {chapter}{Bibliography}{9}{subsection.2.2.3}%

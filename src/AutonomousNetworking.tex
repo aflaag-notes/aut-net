@@ -8,21 +8,21 @@
 
 \def\useItalian{0}  % 1 = Italian, 0 = English
 
-\def\courseName{Course Name}
+\def\courseName{RL-based protocols review}
 
-\def\coursePrerequisites{Small list of prerequisites}
+\def\coursePrerequisites{Basic concepts of Reinforcement Learning.}
 
-\def\book{"My book",\\Author 1, ...}
+% \def\book{"My book",\\Author 1, ...}
 
-\def\authorName{Simone Bianco}
-\def\email{bianco.simone@outlook.it}
-\def\github{https://github.com/Exyss/university-notes}
-\def\linkedin{https://www.linkedin.com/in/simone-bianco}
+% \def\authorName{Simone Bianco}
+% \def\email{bianco.simone@outlook.it}
+% \def\github{https://github.com/Exyss/university-notes}
+% \def\linkedin{https://www.linkedin.com/in/simone-bianco}
 
-% \def\authorName{Alessio Bandiera}
-% \def\email{alessio.bandiera02@gmail.com}
-% \def\github{https://github.com/aflaag-notes}
-% \def\linkedin{https://www.linkedin.com/in/alessio-bandiera-a53767223}
+\def\authorName{Alessio Bandiera}
+\def\email{alessio.bandiera02@gmail.com}
+\def\github{https://github.com/aflaag-notes}
+\def\linkedin{https://www.linkedin.com/in/alessio-bandiera-a53767223}
 
 % Do not change
 
@@ -165,6 +165,8 @@ Despite the wide adoption of this protocol over the years, Q-routing is still fa
 
 \chapter{Classification criteria}
 
+\centeredimage[TODO]{0.4}{../assets/graph.png}
+
 The authors underline that, to their knowledge, their work is the first in the literature that proposes classification criteria to help understanding and comparing all the available RL-based routing protocols. These criteria are divided into 3 groups:
 
 \begin{itemize}
@@ -196,7 +198,93 @@ The authors outlined 6 different \tit{routing optimization contexts}, which we w
 \begin{enumerate}
 	\item \tbf{Data-packet driven optimazion}: in this context the transmission of packets happens hop-by-bop from source $s$ to destination $d$, and upon receival $d$ sends back a feedback. After a given amount of forwarded packets, the routing process converges to the selectoin of optimal paths.
 	\item \tbf{Route requrest driven optimization}: a source $s$ that has data to send to $d$, first sends a Route Request (RR) packet. The latter is then disseminated in the network, and each node that receives the RR packet can decide to partecipate or not --- if it agrees to partecipate, it selects the next node to forward the RR packet to, and this process continues until $d$ is reached. Once a path is found, all packets from $s$ to $d$ are routed through this path. Then, at the end of each transmission a feedback is sent back to the sender regarding the performance of current nodes. Most protocols in this category are extensions to the \tbf{AODV protocol}
+	\item \tbf{Context request driven optimization}: this is a setting that describes peer-to-peer systems and named data networks, in which a node $s$ that is interested in some content $C$ sends its requrest to receive data packets from the nodes $d$ possessing $C$. Nodes on the path from $s$ to $d$ can then decide to forward the request to locate the requested content, and when data packets containing $C$ are forwarded the relay nodes receive feedback and adapt their paths accordingly.
+	\item \tbf{Predefined routes driven optimization}: each source builds \tit{offline} a list of paths of reachability for any target destination. Hence, when a source has packets to send it selects a path amonde the predefined ones. If a link break on the selected path is detected, the source switches to another predefined path. Periodically, a feedback is sent backward to the source, which will adapt its path selection among the predefined list.
+	\item \tbf{Cluster driven optimization}: \todo{me so rotto}
+	\item \tbf{Routing protocol driven optimization}: \todo{me so rotto}
 \end{enumerate}
+
+\subsection{Unicast or Multicast}
+
+Unicast and Multicast routing strategies are vastly different in terms of optimization, so it comes natural to define this criteria in order to categorize the algorithm proposed in the literature. The difference between the two approaches lies in the overhead that Multicast trees requires, both in terms of times and communications, in order to reach optimal trees. Additionally, when some links are not sufficiently stable, the convergence to optimal trees is outright \tit{impossible}. Indeed, RL shoule be applied for multicasting scenarios only when links are sufficiently stable and/or when partial delivery is allowed --- for instance, it is greatly discouraged by the authors on wireless networks.
+
+\subsection{QoS metrics for optimization}
+
+In general, routing problems in networks are \tbf{multicriteria decision making (MCDM)} problems, which are notoriously difficult to solve because of the heterogeneity nature of the metrics utilized. In fact, the choice of the metrics is one of the most important aspects of a user, which depends on the specificities of their application. Consequently, MCDM solving approaches are based on \tit{weights} that express the relative importance of each metrics. \tbf{Quality of Service (QoS)} metrics that have been addressed as objectives for RL-based routing include:
+
+\begin{itemize}
+	\item \tbf{delivery rate}: the average time to deliver a packet at destination
+	\item \tbf{delivery ratio}: the proportion of packets successfully delivered at destination
+	\item \tbf{hop count}: the average number of hops from source to destination
+	\item \tbf{loss ratio}: the proportion of packets not delivered at destination
+	\item \tbf{symbol error rate}: the proportion of \tit{symbols} incorrectly transmitted
+	\item \tbf{light-path blocking probability}: the percentage of the blocked light-paths of all requrests in optical networks --- it is similar to the \tit{loss ratio}
+	\item \tbf{bandwidth}: the average bandwidth provided to sources
+	\item \tbf{throughput}: the average amount of bytes delivered in the entire network per time unit
+	\item \tbf{path stability}: it indicates how a path between source and destination changes over time
+	\item \tbf{energy consumption}: the average energy consumption due to transmissions, receptions and processing
+	\item \tbf{network lifetime}: the average time over which the network is still alive --- this is essential in wireless sensor networks (WSNs)
+	\item \tbf{transmission power}: the power for performing transmission --- usually results in energy saving and interference reduction
+	\item \tbf{PU-SU interference (ratio)}: it indicates how Primary users (PU) are prevented from transmissing by secondary users (SU)
+	\item \tbf{hit delay}: the average delay to return requested data in peer-to-peer and named data networks
+	\item \tbf{hit ratio}: the proportion of statisfied requrests in peer-to-peer and named data networks
+	\item \tbf{gain} or \tbf{revenue}: the average revenue (in \$ or any other currency) received by the agent when routing is seen from a business point of view, and routing should result in profit
+	\item \tbf{overhead}: the average \tit{cost} to deliver data packets at destinatino --- the definition of \tit{cost} may vary depending on the application
+\end{itemize}
+
+\subsection{QoS guaranteeing}
+
+Lastly, there are a few routing protocols aimed at providing QoS guarantees, regarding delivery delay to meet requirements of some \tbf{delay-sensitive applications} -- such as multimedia applications.
+
+\section{Design characteristics}
+
+\subsection{Learning model}
+
+In RL there are two classes of learning strategies, namely \tbf{model-free} and \tbf{model-based}. Even if the vast majority of RL-based routing algorithms are model-free, since constructing a model requires knowledge about the enviroment that can be very hard to collect, it is worth mentioning that a few algorithms are actually model-based. Some of them use offline-collected information, regarding the environment model, while other caluclate and improve the environment model online. Model-based learning can offer an interesting opportunity when the the speed of convergence is a crucial requirement, as model-based approaches are known to have a faster convergence rate.
+
+\subsection{Agent states and Action spaces}
+
+In order to apply RL to any optimization problems we obviously need some definitions of \tbf{agent states} and \tbf{action spaces}. Let's discuss the former first. The following is a brief list of possible \tit{agent state spaces} utilized in the reviewd literature: \todo{non ho capito che ho scritto in questa lista}
+
+\begin{itemize}
+	\item \tit{set of nodes}, which is the most popular in RL-based routing protocols
+	\item \tit{set of grids}, used in grid-organized networks
+	\item \tit{set of couples} relating to the dynamics of nodes, for instance in VANETSs a \tit{couple} is a vehicle speed class and context of move (urban, highway...)
+	\item \tit{set of paths} and their characteristics
+	\item \tit{set of QoS levels required by flows}
+	\item \tit{set of transmission power levels}
+	\item \tit{set of available wavelengths}, in optical networks
+	\item \tit{set of packet states}
+\end{itemize}
+
+Next, we need to outline the possible \tit{action spaces}. Broadly speaking, an action space is a set of single-type actions, or a set of actions of different types. The following is a table containing the possible \tit{single-type actions} and corresponding action state spaces:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+		\hline
+		\textbf{Action selection}                                                                      & \textbf{Action space}            \\
+		\hline
+		Select node $j$ as next hop and forward packet                                                 & Set of node IDs                  \\
+		\hline
+		Select a subset of neighbors $S$ and broadcast packet                                          & Set of partitions of node IDs    \\
+		\hline
+		Select output link $l$ and transmit packet                                                     & Set of links                     \\
+		\hline
+		Select grid $g$ and send packet to one of the nodes in $g$                                     & Set of grids                     \\
+		\hline
+		Select predefined path $p$ and send packet along $p$                                           & Set of predefined paths          \\
+		\hline
+		Allocate $m$ free channels                                                                     & Set of channels                  \\
+		\hline
+		Select a transmission power $pw$                                                               & Set of transmission power levels \\
+		\hline
+		Select a protocol $prt$ among a list of routing protocols and configure the network with $prt$ & Set of standard protocols        \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Solution space exploration}
 
 \addcontentsline{toc}{chapter}{Bibliography}  % Add Bibliography to ToC
 \printbibliography % UNCOMMENT FOR BIBLIOGRAPHY
