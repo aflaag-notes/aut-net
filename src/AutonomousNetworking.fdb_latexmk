@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex AutonomousNetworking"] 1764425545.69996 "AutonomousNetworking.aux" "AutonomousNetworking.bbl" "AutonomousNetworking" 1764425549.51086 0
-  "./AutonomousNetworking-blx.bib" 1764425549.0596 344 b9a53cb296db97caea92c7ca383542c0 ""
-  "./references.bib" 1764414472.10057 1230 1c1939865c52ffafe5907b746a244728 ""
+["bibtex AutonomousNetworking"] 1764441166.3308 "AutonomousNetworking.aux" "AutonomousNetworking.bbl" "AutonomousNetworking" 1764441171.51928 0
+  "./AutonomousNetworking-blx.bib" 1764441171.05528 344 b9a53cb296db97caea92c7ca383542c0 ""
+  "./references.bib" 1764439646.98861 1462 5af5203db67e5d0bce80a613d4c858ee ""
   "/usr/share/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1755987285 65510 b1f696b0241395385f422f67543c37fd ""
-  "AutonomousNetworking.aux" 1764425549.0206 5252 349ece94261cb301c544c410bf88513a "pdflatex"
+  "AutonomousNetworking.aux" 1764441171.00628 9328 8f01741f46aaaf7d1594715d11210ac6 "pdflatex"
   (generated)
   "AutonomousNetworking.bbl"
   "AutonomousNetworking.blg"
   (rewritten before read)
-["pdflatex"] 1764425545.78631 "AutonomousNetworking.tex" "AutonomousNetworking.pdf" "AutonomousNetworking" 1764425549.51157 0
+["pdflatex"] 1764441166.42568 "AutonomousNetworking.tex" "AutonomousNetworking.pdf" "AutonomousNetworking" 1764441171.51985 0
   "../../packages/Nyx/logo.png" 1759341402.38967 91419 8de48debf770a599a084520c83ce5d80 ""
   "../../packages/Nyx/nyx-frames.sty" 1763494587.47954 4411 ae8501e3bb3ad8d6333aa8a36ec2cf41 ""
   "../../packages/Nyx/nyx-intro.sty" 1759341402.38967 3476 d82343305e561945eb7e4f3f9e3a4fe2 ""
@@ -83,6 +83,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1755987285 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1755987285 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1755987285 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1755987285 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1755987285 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1755987285 135942 859a90cad7494a1e79c94baf546d7de5 ""
   "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb" 1755987285 139826 9213617a7cb78635fc326b859c0b2273 ""
@@ -412,12 +413,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763208245 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763208213 2061857 1fa1c5eda06642eaec32dd0d0ec75ddc ""
-  "AutonomousNetworking.aux" 1764425549.0206 5252 349ece94261cb301c544c410bf88513a "pdflatex"
-  "AutonomousNetworking.bbl" 1764425545.76559 2570 9de03b80a8337dbe84ec7be09a054c2a "bibtex AutonomousNetworking"
-  "AutonomousNetworking.out" 1764425549.0546 2524 68031c4b7457309642c3bfe587080ca9 "pdflatex"
-  "AutonomousNetworking.run.xml" 1764425549.06207 2674 41472ec5bf54dc62f64dff95308e88f9 "pdflatex"
-  "AutonomousNetworking.tex" 1764425540.95758 18138 4bdcee6b3e3138d8a43341a25f7532c2 ""
-  "AutonomousNetworking.toc" 1764425549.06207 1434 7032fbaa905bbff56d54e1dbb69f978b "pdflatex"
+  "AutonomousNetworking.aux" 1764441171.00628 9328 8f01741f46aaaf7d1594715d11210ac6 "pdflatex"
+  "AutonomousNetworking.bbl" 1764441166.40627 4233 738ce507c81fa171c8703d64e7533555 "bibtex AutonomousNetworking"
+  "AutonomousNetworking.out" 1764441171.04928 5499 81c530fbc6e2428f57f27bf53b5896a7 "pdflatex"
+  "AutonomousNetworking.run.xml" 1764441171.05669 2674 41472ec5bf54dc62f64dff95308e88f9 "pdflatex"
+  "AutonomousNetworking.tex" 1764441155.30624 35066 8fffba1ffd5cbf86fd447a3256f2ae1a ""
+  "AutonomousNetworking.toc" 1764441171.05669 2967 4d44c0cbb58f9ac64f7d63a1c822c716 "pdflatex"
   (generated)
   "AutonomousNetworking-blx.bib"
   "AutonomousNetworking.aux"

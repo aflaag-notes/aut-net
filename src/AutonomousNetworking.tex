@@ -93,11 +93,64 @@
 
 %%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Q-routing literature review}
+\chapter{Introduction}
+
+TODO \todo{todo}
+
+\chapter{Q-Learning}
 
 TODO \todo{intro}
 
-In RL based design, the following aspects are addressed:
+\section{Reinforcement Learning}
+
+An RL problem is modeled by a 4-tuple $(\mathcal S, \mathcal A, \mathcal P, \mathcal R)$ where
+
+\begin{itemize}
+	\item $\mathcal S$ is the set of states
+	\item $\mathcal A$ is the set of actions
+	\item $\mathcal P$ is the matrix of state transition probabilities
+	\item $\mathcal R$ is the reward function
+\end{itemize}
+
+In particular, the environment model is described by $\mathcal P$ and $\mathcal R$. When the matrix $P$ is defined we call the problem \tbf{model-based}, however the vast majority of the approaches is actually \tbf{model-free} because they require less storage cost and they do not depend on the accuracy of \tit{a priori} knowledge of the environment model.
+
+The behaviour of the learning agent is defined by a \tbf{policy} $\pi_t$, where $$\pi_t[a|s] := \Pr[a_t = a, s_t = s]$$ Assuming that time is discrete, at each timestep the agent selects an action among the set of actions $\mathcal A$, and the environment provides a \tbf{reward} denoted by $R_t$ where $$R_t := \mathcal R(s, a)$$ The objective of the agent is to take actions in order to maximize the \tbf{global discounted reward (GDR)}, denoted by $G_t$, that receives over the future. There are three standard approaches to define $G_t$:
+
+\begin{itemize}
+	\item \tbf{Finite-horizon}: the agent should optimize the reward for the next $h$ steps $$G_t := \sum_{k = 1}^h{R_{t + k}}$$ This model is appropriate when the agent lifetime is known
+	\item \tbf{Infinite-horizon}: this model prevails in literature regarind RL-based systems in general, and it defines the GDR as follows $$G_t := \sum_{k = 0}^{\infty}{\gamma^k \cdot R_{t + k + 1}}$$ where $0 \le \gamma \le 1$ is called \tbf{discount rate}. If $\gamma = 0$ the agent is called \tit{myopic}, since it can only \curlyquotes{see} the immediate reward, while as $\gamma$ approaches 1 the awareness to future rewards increases.
+	\item \tbf{Average-reward}: as the name suggests, this model specifies that $$G_t := \lim_{h \to + \infty}{\dfrac{1}{h} \sum_{k = 0}^h{R_{t + k + 1}}}$$
+\end{itemize}
+
+In the field of RL applications it is usually assumed that the environment state has the \tbf{Markov property}, or some approximation of it. This is because under this assumption the expected value of the next reward is independent of past rewards. Indeed, the Markov property states that the next state depends only on the \tit{present state} and the action to take $$\Pr[R_{t + 1} = r, s_{t + 1} = s' \mid (s_0, a_0, r_0), \ldots, (s_t, a_t, r_t)] = \Pr[R_{t + 1} = r, s_{t + 1} = s' \mid s_t, a_t]$$
+
+RL algorithm involve two types of \tbf{Q-value functions}:
+
+\begin{itemize}
+	\item \tbf{state-value} function: it estimates how good it is for the agent to be in a state. The state-value of a state $s$ under policy $\pi$ is defined as the expected GDR in $s$ $$V_\pi(s) := \Exp[G_t \mid a_t = s]$$
+	\item \tbf{action-value} function: it assesses how good it is to perform a given action in a given state. The state-value of taking action $a$ in state $s$ under policy $\pi$ is the expected GDR in starting from $s$ and taking action $a$ $$Q_\pi(s, a) = \Exp[G_t \mid s_t = s, a_t = a]$$
+\end{itemize}
+
+Solving an RL problem means finding a policy $\pi^*$ that is able to achieve the maximum reward over the long term -- a policy $\pi$ is better than a policy $\pi'$ if it yields better GDR over all the states, i.e. $$\forall s \in \mathcal S \quad V_\pi(s) \ge V_{\pi'}(s)$$ Therefore, by definition it holds that
+
+\begin{itemize}
+	\item $V_{\pi^*}(s) = \max_\pi{V_{\pi}(s)} \quad \forall s \in \mathcal S$
+	\item $Q_{\pi^*}(s, a) = \max_{\pi}{Q_\pi(s, a) \quad \forall s \in \mathcal S}$
+\end{itemize}
+
+many approaches have been proposed to lean an optimal policy at reasonable cost, depending on whether the learning is model-free or model-based. The authors of this paper limited their presentation to the most used learning technique among all the RL-based protocols reviewed, namely \tit{Q-learning} which will be discussed in the next section.
+
+\subsection{Q-learning}
+
+In 1989 \textcite{watkins} introduced \tbf{Q-learning}, a model-free approach to estimate the action function $Q_{\pi^*}(s, a)$. Very importantly, his approximation of the action function is independent of the policy followed by the agent, which makes Q-learning applicable in wide variety of contexts. In Q-learning, the learning process consists in a sequence of stages called \tit{epochs}: in epoch $n$, the agent is in state $s_n$, performs actions $a_n$, receives a reward $R_n$ and it m oves to state $s_{n + 1}$. The action-value is then updated through the following formula $$Q_n(s_n, a_n) = (1 - \alpha) \cdot Q_{n - 1}(s_n, a_n) + \alpha \cdot \sbk{R_n + \gamma \cdot \max_{a \in \mathcal A}{Q_{n - 1}(s_{n+ 1}, a)}}$$ where $\alpha$ is called \tbf{learning factor}. The initial Q-values $Q_0(s, a)$ are assumed given. Moreover, this function can be rewritten in discrete time $t$ as follows: $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in \mathcal A}{Q(s_{t + 1}, a)}}$$ Most importantly, Watkins showed that Q-learning converges to the optimum action-values with probability 1 as long as all actions are repeatedly samples in all states. Indeed, this is the reason why Q-learning is the most popular and most efefctive learning technique for learning from delayed reinforcement. However, the \tit{speed of convergence} remains an open issue.
+
+\section{Q-routing}
+
+\subsection{Application of RL to routing protocols}
+
+TODO \todo{intro}
+
+In RL-based design, the following aspects are addressed:
 
 \begin{itemize}
 	\item identification of the most appropriate states and actions of the agent
@@ -121,7 +174,7 @@ Therefore, the neighboring nodes of a node define the environment of the agent r
 
 TODO \todo{parlare dei tipi di reti?}
 
-\section{Q-routing}
+\subsection{Q-routing}
 
 \textcite{qlearning} were the first to propose a hop-by-bop routing algorithm based on Q-learning, called Q-routing, and the most of exists RL-based routing protocols today are just extensions of this algorithm. The following is the algorithm that defines Q-routing in detail.
 
@@ -153,7 +206,7 @@ We will briefly explain the algorithm. First, let's present the notation:
 	\item $T_{i j}$ is the transmission time between nodes $i$ and $j$
 \end{itemize}
 
-Each entry of the table $Q_i$ is called \tbf{Q-value}, and when node $i$ wants to send a packed, it selects the node $j^*$ that minimizes the Q-value. Upon sendin packet $P$ to node $j^*$, node $i$ receives back from $j^*$ the value $$\theta_{j^*}(d) = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$$ Then, node $i$ has to update its estimate of $Q_i(d, j^*)$ based on $\theta_{j^*}(d)$, which can be performed utilizing the formula $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in A}{Q(s_{t + 1}, a)}}$$ by setting
+Each entry of the table $Q_i$ is called \tbf{Q-value}, and when node $i$ wants to send a packed, it selects the node $j^*$ that minimizes the Q-value. Upon sendin packet $P$ to node $j^*$, node $i$ receives back from $j^*$ the value $$\theta_{j^*}(d) = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$$ Then, node $i$ has to update its estimate of $Q_i(d, j^*)$ based on $\theta_{j^*}(d)$, which can be performed utilizing the formula of the discrete time Q-function update outlined earlier, by setting
 
 \begin{itemize}
 	\item $R_{t + 1} = W_i^q(P) + T_{ij^*}$ since it represents the \tit{link cost}
@@ -161,7 +214,7 @@ Each entry of the table $Q_i$ is called \tbf{Q-value}, and when node $i$ wants t
 	\item $\max_{a \in A}{Q(s_{t + 1}, a)} = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$ since the \curlyquotes{action to take} corresponds to choosing an neighbor in this context, however we seek to \tit{minimize} the Q-value since the delay is clearly a decreasing metric
 \end{itemize}
 
-Despite the wide adoption of this protocol over the years, Q-routing is still far from perfect and it has its flaws. Some of the problems are inherent problems of Q-learning in general, such as \tit{slow convergence} rate and high \tit{parameter setting sensitivity}, but there are problem that arise from the protocol itself. For instance, to avoid frequen oscillations of the Q-values --- in case of sudden variations of traffic in the network --- and limit the overhead of the protocol, \textcite{nowe} proposed an extension in which $j^*$ sends an average $\overline \theta_{j^*}(d)$ to $i$ only after a certain number of exchanged packets. Another known problem is called \tbf{Q-value freshness}: the estimate $\theta_j(d)$ is evaluated upon packet transmission on a route, therefore if a route is not selected during a long period of time, the agent does not have an accurate estimate of the current condition of such route.
+Despite the wide adoption of this protocol over the years, Q-routing is still far from perfect and it has its flaws. Some of the problems are inherent problems of Q-learning in general, such as \tit{slow convergence} rate and high \tit{parameter setting sensitivity}, but there are problem that arise from the protocol itself. For instance, to avoid frequen oscillations of the Q-values --- in case of sudden variations of traffic in the network --- and limit the overhead of the protocol, \textcite{nowe} proposed an extension in which $j^*$ sends an average $\overline \theta_{j^*}(d)$ to $i$ only after a certain number of exchanged packets. Another known problem is called \tit{Q-value freshness}: the estimate $\theta_j(d)$ is evaluated upon packet transmission on a route, therefore if a route is not selected during a long period of time, the agent does not have an accurate estimate of the current condition of such route.
 
 \chapter{Classification criteria}
 
@@ -197,7 +250,7 @@ The authors outlined 6 different \tit{routing optimization contexts}, which we w
 
 \begin{enumerate}
 	\item \tbf{Data-packet driven optimazion}: in this context the transmission of packets happens hop-by-bop from source $s$ to destination $d$, and upon receival $d$ sends back a feedback. After a given amount of forwarded packets, the routing process converges to the selectoin of optimal paths.
-	\item \tbf{Route requrest driven optimization}: a source $s$ that has data to send to $d$, first sends a Route Request (RR) packet. The latter is then disseminated in the network, and each node that receives the RR packet can decide to partecipate or not --- if it agrees to partecipate, it selects the next node to forward the RR packet to, and this process continues until $d$ is reached. Once a path is found, all packets from $s$ to $d$ are routed through this path. Then, at the end of each transmission a feedback is sent back to the sender regarding the performance of current nodes. Most protocols in this category are extensions to the \tbf{AODV protocol}
+	\item \tbf{Route requrest driven optimization}: a source $s$ that has data to send to $d$, first sends a Route Request (RR) packet. The latter is then disseminated in the network, and each node that receives the RR packet can decide to partecipate or not --- if it agrees to partecipate, it selects the next node to forward the RR packet to, and this process continues until $d$ is reached. Once a path is found, all packets from $s$ to $d$ are routed through this path. Then, at the end of each transmission a feedback is sent back to the sender regarding the performance of current nodes. Most protocols in this category are extensions to the \tbf{AODV protocol} \cite{aodv}.
 	\item \tbf{Context request driven optimization}: this is a setting that describes peer-to-peer systems and named data networks, in which a node $s$ that is interested in some content $C$ sends its requrest to receive data packets from the nodes $d$ possessing $C$. Nodes on the path from $s$ to $d$ can then decide to forward the request to locate the requested content, and when data packets containing $C$ are forwarded the relay nodes receive feedback and adapt their paths accordingly.
 	\item \tbf{Predefined routes driven optimization}: each source builds \tit{offline} a list of paths of reachability for any target destination. Hence, when a source has packets to send it selects a path amonde the predefined ones. If a link break on the selected path is detected, the source switches to another predefined path. Periodically, a feedback is sent backward to the source, which will adapt its path selection among the predefined list.
 	\item \tbf{Cluster driven optimization}: \todo{me so rotto}
@@ -285,6 +338,123 @@ Next, we need to outline the possible \tit{action spaces}. Broadly speaking, an 
 \end{table}
 
 \subsection{Solution space exploration}
+
+In Reinforcement Learning the \tbf{Exploration vs Exploitation dilemma} is a well-known problem, and the speed of convergence is directly dependent on the approach utilized to balance between exploring and exploiting the solusion space. In RL-based routing protocols there are mainly 6 \tit{selection techniques} to handle the solution space:
+
+\begin{itemize}
+	\item \tbf{Greedy}: only the highest Q-value is used for selection --- this strategy may take a very long time to converge
+	\item \tbf{$\varepsilon$-greedy}: in addition to greedy selection, the learner uses a small amount of randomness to explore new solutions --- this is the most used form of selection in the reviewed protocols
+	\item \tbf{Probability based}: the same as $\varepsilon$-greedy, except that the value of $\varepsilon$ is calculated from the history of learning
+	\item \tbf{Bayesian network decision}: action selection uses Bayesian networks to better explore the solution space
+	\item \tbf{Devaluation of solutions based}: with this strategy Q-values are either periodically decayed in order to enforce exploration
+	\item \tbf{New neighbors first}: new discovered nodes are favored in next hop selection --- this approach is particularly useful in mobile networks
+\end{itemize}
+
+\subsection{Agents collaboration}
+
+In its basic form, RL defines each agent as \tit{independent} and only able to interact with the environment. However, the authors point out that when applyin RL to routing it is much more effective to allow \tbf{collaborating agents}, indeed almost all proposed protocols are based on this idea. This technique involves not only rewards from the environment but also exchanges of link-state information without actions undertaken from RL point of view. In particular, from an RL pointof view selecting the next hop \tit{is} an RL action, but receiving periodic \tit{Hello packets} is not. However, such information exchange is crucial to ensure reliability of the connections between hops. Indeed, collaboration between agents is so prevalent among the studied algorithms that it is possible to categorize them w.r.t. how the nodes of the network actually cooperate:
+
+\begin{itemize}
+	% \item \tbf{No collaboration}: non-collaborative approaches characterize the earlier type of protocols, which describe mainly centralized algorithms, in which there is either a single agent or multiple agents that make decisions only based on their local view
+	\item \tbf{Reactive collaboration}: when the selected neighbors receives a data packet, either it directly returns its feedback in the ACK packet or it includes its link-state information in each data packet when it forwards it
+	\item \tbf{Proactive collaboration}: in addition to sending their feedback upon reception of a packet, nodes periodically broadcast their link-state information in the form of \tit{Hello packets} to their neighbors
+\end{itemize}
+
+\subsection{Hybridation with other optimization techniques}
+
+Most of RL-based routing algorithms are \curlyquotes{pure reinforcement learning}, however some algorithms combine RL and other optimization techniques to speed up convergence. Some examples include:
+
+\begin{itemize}
+	\item gradient methods
+	\item game theory approaches
+	\item fuzzy logic techniques
+	\item Bayesian networks methods
+	\item least square policy iteration
+	\item neural networks
+	\item genetic algorithms
+	\item ants optimization
+\end{itemize}
+
+\subsection{Number of parameters to tune}
+
+In general, a well-designed protocol should be easy to tune, i.e. it should provide easy-to-use tools and parameters in order to achieve high performance. As we already discussed, when RL is used we consider two basic parameters $\alpha$ and $\gamma$, the \tit{learning factor} and the \tit{discount rate} respectively. Additionally, when multiple metrics are of interest it is crucial to assign a weight to each metric or group of metric in order to establish importance. However, tuning such parameters can be \tit{very} difficult. Therefore, the authors categorized the routing protocols also based on the number of tunable QoS metrics each paper offers.
+
+\subsection{Reward functions}
+
+The authors underline that the \tbf{reward function} is the most distinctive feature of existing RL-based routing protocols, in fact there is a wide variety of reward functions employed based on the metrics that each protocol decided to include. Reward functions may be categorized into three classes:
+
+\begin{itemize}
+	\item \tbf{Test-based reward functions}: they are the simplest form of reward, in which the reward is assigned a constant value depending on the outcome of some \tit{test}. Not surprisingly, the most common test is checking if the packet is was actually delivered to destination --- which would yield a \tit{binary outcome} for the reward.
+	\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H{\omega_k \cdot M_k}$$ where
+	      \begin{itemize}
+		      \item $C$ is a constant factor that depends on the test choosen by the protocol
+		      \item $H$ is the number of metrics of the protocol
+		      \item $\omega_k$ is the weight of the $k$-th metric
+		      \item $M_k$ is the value of the $k$-th metric
+	      \end{itemize}
+	\item \tbf{Nonlinear reward functions}: this type is less common among the RL-protocols, and they are designed with different forms of combinations of metrics depending on the specific application
+\end{itemize}
+
+\subsection{Q-value updating rule forms}
+
+While over half of proposed RL-based routing algorithms are direct applications of Q-learning as presented in the previous chapter, the remaining half of protocols proposed RL-based routing procedures that either used a modifice QL Q-value updating rule, or do not rely on Q-learning at all.
+
+\section{Performance aspects}
+
+\subsection{Communication overhead}
+
+Communication overhead of protocols have been categorized from a \tit{qualitative} point of view into the following groups:
+
+\begin{itemize}
+	\item \tbf{null}: no exchange required between agents
+	\item \tbf{low}: the selected next hop returns a feedback in an explicit ACK packet, or it includes its feedback when, in turn, it (re)forwards the packet --- half of the reviewed protocols fall under this category
+	\item \tbf{medium}: this is the case of protocols in which the feedback from the destination is propagated to all hopds through an explicit ACK packet
+	\item \tbf{high}: these protocols require that nodes periodically exchange link-state information --- clearly the amount of control packets needed depend on the period of \tit{Hello packets}
+\end{itemize}
+
+\subsection{State space overhead}
+
+RL-based algorithms require memory to store the \tbf{states of the agents}, and in some RL-based applications the number of states may be \tit{very high}. Hence, from a \tit{qualitative} perspective the protocols can be grouped based on the \tbf{state space overhead} as follows:
+
+\begin{itemize}
+	\item \tbf{very low}: when the state space is states of a packet \todo{what?}
+	\item \tbf{low}: when the state space is the node IDs --- most of the reviewed papers fall under this category
+	\item \tbf{limited}: when the state space depends on external factors (such that the number of transmission power levels, maximum number of available channels etc.)
+	\item \tbf{high}: when the state space is a list of paths with their current characteristics
+\end{itemize}
+
+\subsection{Action space overhead}
+
+In addition to the space required to store states, RL-based algorithms also require memory to store \tbf{the possible actions} that agents can select. Again, from a \tit{qualitative} point of view \tbf{action overhead} is categorized as follows:
+
+\begin{itemize}
+	\item \tbf{low}: when the action space depends on external factors
+	\item \tbf{medium} when the action space depends on the number of nodes in the neighborhood
+	\item \tbf{high} if the action space depends on the number of dynamic or predefined paths, or on the number of grids in the network
+	\item \tbf{very high}: if the state space depends on combinations of channel subsets or paths
+\end{itemize}
+
+\subsection{Proof of convergence}
+
+In optimization field, the \tbf{convergence} to optimal solutions is an \tit{expected} property, however many existing techniques to solve multicriteria optimization (MCO) problems are known to be sub-optimal. RL-based solution would be widely deployed if their convergence rate could be formally demonstrated, and indeed the proof of convergence can be derived from the work of \textcite{watkins} but only as long as some assumptions are satisfied. In real world scenarios it is hard to establish the satisfiability of such assumptions, and proving convergence rigorously remains an issue to this day for most of the protocols that are not perfectly Q-learning compliant. Rather, convergence is usually assessed from simulations or just stating that convergence can be reached eventually without providing any proof of such claims.
+
+\subsection{Protocol performance (in simulations)}
+
+Given the large number of protocols and the wide variety of reward functions and metric weights, the authors found impractical to provide qualitative evaluation of the performance of each single protocol, so they limited their effort to present the data reported by the original authors \tit{as-is}.
+
+\chapter{Conclusions and Challenges}
+
+RL is an efficient alternative to enforce online-awareness of routing protocols to their environment changes, and through RL-based routing protocols it is possible to provide higher level of QoS while still optimizing resource utilization. However, some challenges still remain and should be investigated to provide evidence on applicability of RL-based protocols \tit{at large scale}. Some of the challenges pointed out by the authors include:
+
+\begin{itemize}
+	\item \tbf{Proof of optimality}: as already mentioned, almost all reviewed papers did not convincingly address proof of convergence. Watkins proved convergence under specific conditions, however it is unclear how and when the latter apply to routing.
+	\item \tbf{Speed of convergence}: whenever large networks are considered, space exploration may take a bery long time before optimal paths are discovered, resulting in poor end-to-end performance of the network. Convergence rates should be investigated further to provide bounds of delay for let users know when the network can or cannot provide acceptable QoS levels.
+	\item \tbf{Link-state information dissemination}: in most protocols, link-state information is used to calculate metrics, consequently the convergence of the routing algorithms strictly depends on the freshness of disseminated link-state information. The frequency of \tit{Hello packets} should be addressed in order to find a compromise between protocol overhead and values of reward.
+	\item \tbf{Metrics weights and learning parameters}: clearly, learning parameters and weights have a significant impact on the quality of paths and on the speed of convergence. However, determining the optimal set of parameters can be very difficult, therefore the authors suggest the development of a methodology to address this problem, which would make the depolyment of RL-based routing protocols easier.
+	\item \tbf{Hybridization}: \todo{da finire so stufo}
+	\item \tbf{Hybridization}:
+	\item \tbf{Hybridization}:
+\end{itemize}
 
 \addcontentsline{toc}{chapter}{Bibliography}  % Add Bibliography to ToC
 \printbibliography % UNCOMMENT FOR BIBLIOGRAPHY
