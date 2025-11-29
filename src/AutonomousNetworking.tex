@@ -163,15 +163,40 @@ Each entry of the table $Q_i$ is called \tbf{Q-value}, and when node $i$ wants t
 
 Despite the wide adoption of this protocol over the years, Q-routing is still far from perfect and it has its flaws. Some of the problems are inherent problems of Q-learning in general, such as \tit{slow convergence} rate and high \tit{parameter setting sensitivity}, but there are problem that arise from the protocol itself. For instance, to avoid frequen oscillations of the Q-values --- in case of sudden variations of traffic in the network --- and limit the overhead of the protocol, \textcite{nowe} proposed an extension in which $j^*$ sends an average $\overline \theta_{j^*}(d)$ to $i$ only after a certain number of exchanged packets. Another known problem is called \tbf{Q-value freshness}: the estimate $\theta_j(d)$ is evaluated upon packet transmission on a route, therefore if a route is not selected during a long period of time, the agent does not have an accurate estimate of the current condition of such route.
 
-\section{Classification criteria}
+\chapter{Classification criteria}
 
-The authors underline that, to their knowledge, their work is the first in the literature that proposes classification criteria to help understanding and comparing all the available RL-based routing protocols. These criteria are divided into three groups:
+The authors underline that, to their knowledge, their work is the first in the literature that proposes classification criteria to help understanding and comparing all the available RL-based routing protocols. These criteria are divided into 3 groups:
 
 \begin{itemize}
 	\item \tbf{context of use}: these are criteria that describe the targeted applications and their characteristics and requirements
 	\item \tbf{design characteristics}: criteria in this group highlight how authors designed their protocols to make them efficient and different from the others
-	\item \tbf{performance}: in this last category, criteria provide a qualitative evaluation of the overhead of protocols and the metrics used by the authors to analyze simulations
+	\item \tbf{performance}: in this last category, criteria provide a qualitative evaluation of the overhead of protocols and the metrics used by the authors
 \end{itemize}
+
+We will cover each criteria in the
+
+\section{Context of use}
+
+\subsection{Network class and Assumptions}
+
+TODO \todo{non ho capito}
+
+\subsection{Routing Optimization Context}
+
+From users' perspective, routing protocols should always be able to determine and select the optimal paths to convey data from sources to destinations. There are different ways to achieve such goal, that depend on
+
+\begin{itemize}
+	\item roles assigned to data sources
+	\item roles assigned to relaying nodes
+	\item initial assumptions about routing
+\end{itemize}
+
+The authors outlined 6 different \tit{routing optimization contexts}, which we will briefly explain one by one.
+
+\begin{enumerate}
+	\item \tbf{Data-packet driven optimazion}: in this context the transmission of packets happens hop-by-bop from source $s$ to destination $d$, and upon receival $d$ sends back a feedback. After a given amount of forwarded packets, the routing process converges to the selectoin of optimal paths.
+	\item \tbf{Route requrest driven optimization}: a source $s$ that has data to send to $d$, first sends a Route Request (RR) packet. The latter is then disseminated in the network, and each node that receives the RR packet can decide to partecipate or not --- if it agrees to partecipate, it selects the next node to forward the RR packet to, and this process continues until $d$ is reached. Once a path is found, all packets from $s$ to $d$ are routed through this path. Then, at the end of each transmission a feedback is sent back to the sender regarding the performance of current nodes. Most protocols in this category are extensions to the \tbf{AODV protocol}
+\end{enumerate}
 
 \addcontentsline{toc}{chapter}{Bibliography}  % Add Bibliography to ToC
 \printbibliography % UNCOMMENT FOR BIBLIOGRAPHY
