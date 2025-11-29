@@ -1,0 +1,92 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{anyt/global//global/global/global}
+  \entry{qlearning}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Boyan},
+         familyi={B\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Littman},
+         familyi={L\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJLM1}
+    \strng{fullhash}{BJLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BL93}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Packet routing in dynamically changing networks: A reinforcement learning approach}
+    \field{volume}{6}
+    \field{journaltitle}{Advances in neural information processing systems}
+    \field{year}{1993}
+  \endentry
+
+  \entry{nowe}{inproceedings}{}{}
+    \name{author}{4}{}{%
+      {{hash=NA}{%
+         family={Nowe},
+         familyi={N\bibinitperiod},
+         given={Ann},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Steenhaut},
+         familyi={S\bibinitperiod},
+         given={Kris},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fakir},
+         familyi={F\bibinitperiod},
+         given={Mohamed},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VK}{%
+         family={Verbeeck},
+         familyi={V\bibinitperiod},
+         given={Katja},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{NASKFM+1}
+    \strng{fullhash}{NASKFMVK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{NSF+98}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{booktitle}{SMC'98 Conference Proceedings. 1998 IEEE International Conference on Systems, Man, and Cybernetics (Cat. No. 98CH36218)}
+    \field{pages}{3965\bibrangedash 3970}
+    \field{title}{Q-learning for adaptive load based routing}
+    \field{volume}{4}
+    \field{year}{1998}
+  \endentry
+\enddatalist
+\endinput

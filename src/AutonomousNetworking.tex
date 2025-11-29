@@ -93,9 +93,87 @@
 
 %%%%%%%%%%%%%%%%%%%%%
 
-% 
+\chapter{Q-routing literature review}
+
+TODO \todo{intro}
+
+In RL based design, the following aspects are addressed:
+
+\begin{itemize}
+	\item identification of the most appropriate states and actions of the agent
+	\item definition of the reward function depending on the metrics to optimize
+	\item identification of environment model when available
+\end{itemize}
+
+Given a target field of application, different design models may be elaborated, which differ in how they address each of the previous aspects.
+
+In the last 25 years many RL-based routing protocol have been proposed, but most of them share the same high-level structure.
+
+In literature, nodes are confused with agents, and in almost all protocols the reward is (at least partially) calculated by a node upon selecting an entire route to use for all packtes to transmit, or just a next hop to transmit the current data packet. Thus, a \tit{node} should be considered to consist of an agent and optional \tit{modules}:
+
+\begin{itemize}
+	\item \tbf{local reward} module: it calculates reward based on local view, which reflects the cost of communication as seen by the packet sender
+	\item \tbf{remote reward} module: it receives feedback sent by the next hop or by the destinatino node --- if local and remote modules are both employed they are combined to form the reward return to the agent
+	\item \tbf{link-state information maintenance} module: it collects useful link state information through periodi or on-demand \tit{Hello packets}
+\end{itemize}
+
+Therefore, the neighboring nodes of a node define the environment of the agent representing a node.
+
+TODO \todo{parlare dei tipi di reti?}
+
+\section{Q-routing}
+
+\textcite{qlearning} were the first to propose a hop-by-bop routing algorithm based on Q-learning, called Q-routing, and the most of exists RL-based routing protocols today are just extensions of this algorithm. The following is the algorithm that defines Q-routing in detail.
+
+% \begin{framedalgo}{Q-routing}
+\begin{algorithmic}[1]
+	\Function{Qrouting}{ }
+	\State Initialize $Q_i$ matrix randomly
+	\While{termination condition holds}
+	\If{packet $P$ is ready to be sent to $d$}
+	\State Determine node $j^* \gets \argmin_{j \in \mathcal N (i)}{Q_i(d, j)}$
+	\State Send packet to node $j^*$
+	\State Collect estimate $\theta_{j^*}(d)$ from node $j^*$
+	\State Update $Q_i(d, j^*) \gets (1 - \alpha) \cdot Q_i(d, j^*) + \alpha \cdot \sbk{W_i^q(P) + T_{ij^*} + \theta_{j^*}(d)}$
+	\EndIf
+	\EndWhile
+	\EndFunction
+\end{algorithmic}
+% \end{framedalgo}
+
+We will briefly explain the algorithm. First, let's present the notation:
+
+\begin{itemize}
+	\item $i$ is the node that is currently running the algorithm
+	\item $P$ is a packet that node $i$ needs to forward to destination $d$
+	\item $Q_i(d, j)$ is the \tit{delivery delay} that $i$ estimates it takes, for node $j$, to deliver the packet $P$ at destination $i$
+	\item $\mathcal N(j)$ is the set of $j$'s neighbors
+	\item $\theta_j(d)$ is $j$'s estimate for the time remaining in the trip to destination $d$ of packet $P$
+	\item $W_i^q(P)$ is the time spent by packet $P$ in node $i$'s queue
+	\item $T_{i j}$ is the transmission time between nodes $i$ and $j$
+\end{itemize}
+
+Each entry of the table $Q_i$ is called \tbf{Q-value}, and when node $i$ wants to send a packed, it selects the node $j^*$ that minimizes the Q-value. Upon sendin packet $P$ to node $j^*$, node $i$ receives back from $j^*$ the value $$\theta_{j^*}(d) = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$$ Then, node $i$ has to update its estimate of $Q_i(d, j^*)$ based on $\theta_{j^*}(d)$, which can be performed utilizing the formula $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in A}{Q(s_{t + 1}, a)}}$$ by setting
+
+\begin{itemize}
+	\item $R_{t + 1} = W_i^q(P) + T_{ij^*}$ since it represents the \tit{link cost}
+	\item $\gamma = 1$
+	\item $\max_{a \in A}{Q(s_{t + 1}, a)} = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$ since the \curlyquotes{action to take} corresponds to choosing an neighbor in this context, however we seek to \tit{minimize} the Q-value since the delay is clearly a decreasing metric
+\end{itemize}
+
+Despite the wide adoption of this protocol over the years, Q-routing is still far from perfect and it has its flaws. Some of the problems are inherent problems of Q-learning in general, such as \tit{slow convergence} rate and high \tit{parameter setting sensitivity}, but there are problem that arise from the protocol itself. For instance, to avoid frequen oscillations of the Q-values --- in case of sudden variations of traffic in the network --- and limit the overhead of the protocol, \textcite{nowe} proposed an extension in which $j^*$ sends an average $\overline \theta_{j^*}(d)$ to $i$ only after a certain number of exchanged packets. Another known problem is called \tbf{Q-value freshness}: the estimate $\theta_j(d)$ is evaluated upon packet transmission on a route, therefore if a route is not selected during a long period of time, the agent does not have an accurate estimate of the current condition of such route.
+
+\section{Classification criteria}
+
+The authors underline that, to their knowledge, their work is the first in the literature that proposes classification criteria to help understanding and comparing all the available RL-based routing protocols. These criteria are divided into three groups:
+
+\begin{itemize}
+	\item \tbf{context of use}: these are criteria that describe the targeted applications and their characteristics and requirements
+	\item \tbf{design characteristics}: criteria in this group highlight how authors designed their protocols to make them efficient and different from the others
+	\item \tbf{performance}: in this last category, criteria provide a qualitative evaluation of the overhead of protocols and the metrics used by the authors to analyze simulations
+\end{itemize}
+
 \addcontentsline{toc}{chapter}{Bibliography}  % Add Bibliography to ToC
 \printbibliography % UNCOMMENT FOR BIBLIOGRAPHY
 
 \end{document}
-
