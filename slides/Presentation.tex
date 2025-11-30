@@ -1,0 +1,229 @@
+\documentclass{beamer}
+
+% Custom imports
+
+\usepackage[Algorithm]{algorithm}
+\usepackage{algpseudocode}
+\usepackage[
+	backend=bibtex,
+	style=alphabetic,
+	sorting=anyt,
+	minnames=3,
+	minalphanames=3
+]{biblatex}
+
+% Custom macros
+
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tit}[1]{\textit{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\rbk}[1]{\left(#1\right)}
+\newcommand{\sbk}[1]{\left[#1\right]}
+\newcommand{\cbk}[1]{\left\{#1\right\}}
+
+% Intro slide
+
+\title{Reinforcement Learning Based Routing in Networks: Review and Classification of Approaches}
+\author{Alessio Bandiera 1985878}
+\date{}
+
+% \addbibresource{./references.bib}
+\addbibresource{../src/references.bib}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Q-routing}
+
+	In 1993 \textcite{qlearning} proposed a hop-by-hop routing algorithm based on Q-learning, called \textbf{Q-routing}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+	Most of the existing RL-based routing protocols today are extensions of their work.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Q-routing}
+
+	\scriptsize
+	\begin{algorithmic}[1]
+		\Function{Qrouting}{ }
+		\State Initialize $Q_i$ matrix randomly
+		\While{termination condition holds}
+		\If{packet $P$ is ready to be sent to $d$}
+		\State Determine node $j^* \gets \argmin_{j \in \mathcal N (i)}{Q_i(d, j)}$
+		\State Send packet to node $j^*$
+		\State Collect estimate $\theta_{j^*}(d)$ from node $j^*$
+		\State Update $Q_i(d, j^*) \gets (1 - \alpha) \cdot Q_i(d, j^*) + \alpha \cdot \sbk{W_i^q(P) + T_{ij^*} + \theta_{j^*}(d)}$
+		\EndIf
+		\EndWhile
+		\EndFunction
+	\end{algorithmic}
+
+	\pause
+
+	\begin{itemize}
+		\item $i$ is the node that is currently running the algorithm
+		\item $P$ is a packet that node $i$ needs to forward to destination $d$
+		\item $Q_i(d, j)$ is the \textit{delivery delay} that $i$ estimates it takes, for node $j$, to deliver the packet $P$ at destination $i$
+		\item $\mathcal N(j)$ is the set of $j$'s neighbors
+		\item $\theta_j(d)$ is $j$'s estimate for the time remaining in the trip to destination $d$ of packet $P$
+		\item $W_i^q(P)$ is the time spent by packet $P$ in node $i$'s queue
+		\item $T_{i j}$ is the transmission time between nodes $i$ and $j$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Q-routing}
+
+	\scriptsize
+	\begin{algorithmic}[1]
+		\Function{Qrouting}{ }
+		\State Initialize $Q_i$ matrix randomly
+		\While{termination condition holds}
+		\If{packet $P$ is ready to be sent to $d$}
+		\State Determine node $j^* \gets \argmin_{j \in \mathcal N (i)}{Q_i(d, j)}$
+		\State Send packet to node $j^*$
+		\State Collect estimate $\theta_{j^*}(d)$ from node $j^*$
+		\State Update $Q_i(d, j^*) \gets (1 - \alpha) \cdot Q_i(d, j^*) + \alpha \cdot \sbk{W_i^q(P) + T_{ij^*} + \theta_{j^*}(d)}$
+		\EndIf
+		\EndWhile
+		\EndFunction
+	\end{algorithmic}
+
+	\vspace{0.8cm}
+
+	\normalsize
+
+	\begin{overprint}
+		\onslide<1>
+		Upon sending packet $P$ to node $j^*$, node $i$ receives back from node $j^*$ the estimate $$\theta_{j^*}(d) = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$$
+
+		\onslide<2>
+		Then, node $i$ updates $Q_i(d, j^*)$ based on the \tit{update formula} for Q-learning: $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in \mathcal A}(s_{t + 1}, a)}$$
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Q-learning}
+
+	Despite the wide adoption, Q-routing has some flaws. Some problems are direct consequences of Q-learning such as
+
+	\begin{itemize}
+		\item \tit{slow convergence}
+		\item \tit{high parameter setting sensitivity}
+	\end{itemize}
+
+	However, there are also problems arising from the algorithm itself. \\
+	\vspace{0.8cm}
+
+	\pause
+	For instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Classification criteria}
+
+	To their knowledge, the authors statae that their work is the first in the literature that proposed \textbf{classification criteria} to help comparing all available RL-based routing protocols in the literature. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	These criteria are divided into 3 groups:
+
+	\begin{enumerate}
+		\item \tbf{Context of use}: criteria based on the \tit{target applications}
+		\item \tbf{Design characteristics}: criteria based on the \tit{design} of the protocols
+		\item \tbf{Performance}: criteria based on qualitative evaluation on \tit{overhead} and \tit{metrics}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context of use --- Network class and assumptions}
+
+	TODO
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context of use --- Routing optimization context}
+
+	A \tit{good} protocol should be able to determine and select the optimal paths to convey data from sources to destinations. This can be TODO
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context of use -- Unicast or Multicast}
+
+	Categorizing between \tbf{unicast or multicast} approaches is a natural choice, given the inherent \tit{overhead} that multicast routing protocols require. \\
+	\vspace{0.8cm}
+
+	\pause
+	Indeed, RL should be applied in multicasting scenarios only when links are sufficiently stable and/or partial delivery is allowed, otherwise convergence may be outright \tit{impossible}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context of use --- QoS metrics for optimization}
+
+	The choice of the metrics is one of the most important aspects of a protocol. When multiple metrics are utilized, they are \tit{weighted} based on the importance --- which depends on the target application. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	\tbf{Quality of Service (QoS)} metrics that have been addressed as objectives for RL-based routing include:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\onslide<3>
+		\begin{itemize}
+			\item \tbf{delivery rate}: average time to deliver a packet
+			\item \tbf{delivery ratio}: proportion of packets successfully delivered
+			\item \tbf{hop count}: average number of hops from source to destination
+			\item \tbf{loss ratio}: proportion of packets not delivered
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{bandwidth}: average bandwidth provided to sources
+			\item \tbf{throughput}: average amount of bytes delivered in the entire network per time unit
+			\item \tbf{path stability}: it indicates how a path between source and destination changes over time
+			\item \tbf{energy consumption}: average energy consumption of the network
+		\end{itemize}
+
+		\onslide<5>
+
+		\begin{itemize}
+			\item \tbf{network lifetime}: average time over which the network is still alive
+			\item \tbf{transmission power}: power for performing a transmission
+			\item \tbf{hit delay}: average delay to return requrested data in peer-to-peer networks
+			\item \tbf{hit ratio}: proportion of satisfied requrests in peer-to-peer networks
+		\end{itemize}
+
+		\onslide<6>
+
+		\begin{itemize}
+			\item \tbf{gain}: average revenue (in \$) received by the agent --- in business contexts
+			\item \tbf{overhead}: average \tit{cost} to deliver data packets at destination --- the \tit{cost} definition depends on the application
+		\end{itemize}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Context of use -- QoS guaranteeing}
+
+	Lastly, a few routing protocols are aimed at providing QoS guarantees, regarding delivery delay to meet some requirements of \tbf{delay-sensitive applications}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	For instance, this is essential in \tit{multimedia applications}.
+\end{frame}
+
+\end{document}
