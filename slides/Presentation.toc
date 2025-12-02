@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Q-routing}{2}{0}{1}
+\beamer@sectionintoc {2}{Classification criteria}{11}{0}{2}

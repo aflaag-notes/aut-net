@@ -17,32 +17,29 @@
 \endgroup
 
 \datalist[entry]{anyt/global//global/global/global}
-  \entry{qlearning}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=BJ}{%
-         family={Boyan},
-         familyi={B\bibinitperiod},
-         given={Justin},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=LM}{%
-         family={Littman},
-         familyi={L\bibinitperiod},
-         given={Michael},
-         giveni={M\bibinitperiod},
+  \entry{watkins}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=WCJCH}{%
+         family={Watkins},
+         familyi={W\bibinitperiod},
+         given={Christopher John Cornish\bibnamedelima Hellaby},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim H\bibinitperiod},
       }}%
     }
-    \strng{namehash}{BJLM1}
-    \strng{fullhash}{BJLM1}
+    \list{publisher}{1}{%
+      {King's College, Cambridge United Kingdom}%
+    }
+    \strng{namehash}{WCJCH+1}
+    \strng{fullhash}{WCJCH+1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{BL93}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{title}{Packet routing in dynamically changing networks: A reinforcement learning approach}
-    \field{volume}{6}
-    \field{journaltitle}{Advances in neural information processing systems}
-    \field{year}{1993}
+    \field{labelalpha}{Wat+89}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Learning from delayed rewards}
+    \field{year}{1989}
   \endentry
 \enddatalist
 \endinput

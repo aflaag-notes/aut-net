@@ -1,7 +1,14 @@
 \documentclass{beamer}
 
+% Theme
+
+\usepackage{amsfonts,amsmath,oldgerm}
+\usefonttheme[onlymath]{serif}
+\usetheme{sintef}
+
 % Custom imports
 
+\usepackage{amsfonts,amsmath,oldgerm}
 \usepackage[Algorithm]{algorithm}
 \usepackage{algpseudocode}
 \usepackage[
@@ -23,20 +30,29 @@
 
 % Intro slide
 
-\title{Reinforcement Learning Based Routing in Networks: Review and Classification of Approaches}
-\author{Alessio Bandiera 1985878}
+\titlebackground*{assets/background}
+
+\title{Review of TODO}
+\subtitle{TODO}
+\course{Master's Degree in Computer Science}
+\author{\href{alessio.bandiera02@gmail.com}{Alessio Bandiera}}
+\IDnumber{1234567}
 \date{}
 
-% \addbibresource{./references.bib}
+% Bibliography
+
 \addbibresource{../src/references.bib}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Document
+
 \begin{document}
+\maketitle
 
-\frame{\titlepage}
+\section{Q-routing}
 
-\begin{frame}
-	\frametitle{Q-routing}
-
+\begin{frame}{TODO}
 	In 1993 \textcite{qlearning} proposed a hop-by-hop routing algorithm based on Q-learning, called \textbf{Q-routing}. \\
 
 	\vspace{0.8cm}
@@ -45,7 +61,7 @@
 	Most of the existing RL-based routing protocols today are extensions of their work.
 \end{frame}
 
-\begin{frame}
+\begin{frame}{The algorithm}
 	\frametitle{Q-routing}
 
 	\scriptsize
@@ -76,7 +92,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{The algorithm}
 	\frametitle{Q-routing}
 
 	\scriptsize
@@ -107,9 +123,7 @@
 	\end{overprint}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Q-learning}
-
+\begin{frame}{Flaws}
 	Despite the wide adoption, Q-routing has some flaws. Some problems are direct consequences of Q-learning such as
 
 	\begin{itemize}
@@ -124,10 +138,12 @@
 	For instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
 \end{frame}
 
-\begin{frame}
+\section{Classification criteria}
+
+\begin{frame}{The criteria groups}
 	\frametitle{Classification criteria}
 
-	To their knowledge, the authors statae that their work is the first in the literature that proposed \textbf{classification criteria} to help comparing all available RL-based routing protocols in the literature. \\
+	To their knowledge, the authors state that their work is the first in the literature that proposed \textbf{classification criteria} to help comparing all available RL-based routing protocols in the literature. \\
 
 	\vspace{0.8cm}
 
@@ -143,19 +159,29 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Context of use --- Network class and assumptions}
+	\frametitle{Context of use}
+	\framesubtitle{Classification criteria: Context of use}
+
+	TODO intro slide
+\end{frame}
+
+\begin{frame}
+	\frametitle{Network class and assumptions}
+	\framesubtitle{Classification criteria: Context of use}
 
 	TODO
 \end{frame}
 
 \begin{frame}
-	\frametitle{Context of use --- Routing optimization context}
+	\frametitle{Routing optimization context}
+	\framesubtitle{Classification criteria: Context of use}
 
 	A \tit{good} protocol should be able to determine and select the optimal paths to convey data from sources to destinations. This can be TODO
 \end{frame}
 
 \begin{frame}
-	\frametitle{Context of use -- Unicast or Multicast}
+	\frametitle{Unicast or Multicast}
+	\framesubtitle{Classification criteria: Context of use}
 
 	Categorizing between \tbf{unicast or multicast} approaches is a natural choice, given the inherent \tit{overhead} that multicast routing protocols require. \\
 	\vspace{0.8cm}
@@ -165,7 +191,8 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Context of use --- QoS metrics for optimization}
+	\frametitle{QoS metrics for optimization}
+	\framesubtitle{Classification criteria: Context of use}
 
 	The choice of the metrics is one of the most important aspects of a protocol. When multiple metrics are utilized, they are \tit{weighted} based on the importance --- which depends on the target application. \\
 
@@ -178,8 +205,6 @@
 	\begin{overprint}
 		\onslide<1>
 		\onslide<2>
-
-		\onslide<3>
 		\begin{itemize}
 			\item \tbf{delivery rate}: average time to deliver a packet
 			\item \tbf{delivery ratio}: proportion of packets successfully delivered
@@ -187,7 +212,7 @@
 			\item \tbf{loss ratio}: proportion of packets not delivered
 		\end{itemize}
 
-		\onslide<4>
+		\onslide<3>
 
 		\begin{itemize}
 			\item \tbf{bandwidth}: average bandwidth provided to sources
@@ -196,7 +221,7 @@
 			\item \tbf{energy consumption}: average energy consumption of the network
 		\end{itemize}
 
-		\onslide<5>
+		\onslide<4>
 
 		\begin{itemize}
 			\item \tbf{network lifetime}: average time over which the network is still alive
@@ -205,7 +230,7 @@
 			\item \tbf{hit ratio}: proportion of satisfied requrests in peer-to-peer networks
 		\end{itemize}
 
-		\onslide<6>
+		\onslide<5>
 
 		\begin{itemize}
 			\item \tbf{gain}: average revenue (in \$) received by the agent --- in business contexts
@@ -215,7 +240,8 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Context of use --- QoS guaranteeing}
+	\frametitle{QoS guaranteeing}
+	\framesubtitle{Classification criteria: Context of use}
 
 	Lastly, a few routing protocols are aimed at providing QoS guarantees, regarding delivery delay to meet some requirements of \tbf{delay-sensitive applications}. \\
 
@@ -223,7 +249,304 @@
 
 	\pause
 
-	For instance, this is essential in \tit{multimedia applications}.
+	For instance, QoS guarantees are essential in \tit{multimedia applications}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Design characteristics}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	TODO intro slide
+\end{frame}
+
+\begin{frame}
+	\frametitle{Learning model}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	In RL there are two possible approaches, \tbf{model-free} and \tbf{model-based}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	\begin{overprint}
+		\onslide<1>
+
+		The vast majority of RL-based routing algorithms are \tbf{model-free}, since constructing a model requires knowledge about the environment that can be difficult to collect.
+
+		\onslide<2>
+
+		However a few algorithms are actually \tbf{model-based}, in particular
+
+		\begin{itemize}
+			\item some of them use \tit{offline}-collected information of the environment model
+			\item some others calculate and improve the environment model in an \tit{online} fashion
+		\end{itemize}
+
+		\onslide<3>
+
+		Model based approaches are known to converge quickly, and thus can offer an interesting opportunity when the \tbf{speed of convergence} is a crucial requirement.
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agent states and Actions spaces}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	TODO
+\end{frame}
+
+\begin{frame}
+	\frametitle{Solution space exploration}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	In RL the \tbf{Exploration vs Exploitation dilemma} is a well-known problem. Indeed, the \tit{speed of convergence} strictly depends on the approach utilized to balance between \tit{exploring} and \tit{exploiting} the solution space.
+
+	\vspace{0.8cm}
+
+	\pause
+
+	The \tit{action selection} strategies in RL-based routing include:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\begin{itemize}
+			\item \tbf{Greedy strategy}: only the highes Q-value is used for selection --- this strategy may take a very long time to converge
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item \tbf{$\varepsilon$-greedy strategy}: in addition to the greedy strategy, the learner uses a small amount of randomness (that depends on $\varepsilon$) to explore new solutions --- the most used form of selection
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{Proabability based strategy}: similar to $\varepsilon{}$-greedy, but the value of $\varepsilon$ is calculated from the history of learning
+		\end{itemize}
+
+		\onslide<5>
+
+		\begin{itemize}
+			\item \tbf{Bayesian network decision strategy}: the action selection uses \tit{Bayesian networks} to better explore the solution space
+		\end{itemize}
+
+		\onslide<6>
+
+		\begin{itemize}
+			\item \tbf{Devaluation of solutions based strategy}: the Q-values are periodically decayed in order to enforce exploration of the solution space
+		\end{itemize}
+
+		\onslide<7>
+
+		\begin{itemize}
+			\item \tbf{New neighbors first strategy}: newly discovered nodes are favored in next hop selection --- this approach is particularly useful in \tit{mobile networks}
+		\end{itemize}
+
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agents collaboration}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	The original version of RL defines each agent as \tit{independent}, and only able to interact with the environment. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	\begin{overprint}
+		\onslide<1>
+
+		However, when applying RL to routing it is more effective to allow \tbf{collaborating agents}, indeed almost all reviewed protocols are based on this idea. In particular \tit{collaboration} concerns both RL and non-RL related exchanges, such as the exchange of \tbf{link-state information}..
+
+		\onslide<2>
+
+		Indeed, collaboration is so prevalent among the protocols in the literature that it is possible to categorize them w.r.t. how the nodes cooperate:
+
+		\begin{itemize}
+			\item \tbf{Reactive collaboration}: nodes only provide feedback upon reception of packet
+			\item \tbf{Proactive collaboration}: similar to the \tit{reactive} approach, but nodes additionally broadcast their link-state information through \tit{Hello packets} to their neightbors
+		\end{itemize}
+
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hybridization with other optimization techniques}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	Most of RL-based routing algorithms involve \tit{pure} RL approaches, however some algorithms combine RL with other \tbf{optimization techniques} to speed up convergence. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Approaches include:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\begin{itemize}
+			\item Gradient methods
+			\item Game Theory approaches
+			\item \tit{Bayesian network} methods
+			\item Least square policy iteration
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item Neural Networks
+			\item Genetic algorithms
+			\item Ants optimization
+		\end{itemize}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Numbers of parameters to tune}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	A well-designed protocol should be \tbf{easily tunable}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, in addition to $\alpha$ and $\gamma$ a multitude of protocols utilize many more tunable parameters in their algorithms. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Additionally, weights must be assigned whenever there are \tbf{multiple metrics} to consider. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Therefore the authors categorized the routing protocols also based on the number of tunable QoS metrics and parameter each paper offers.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reward functions}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	The authors outline that the \tbf{reward function} is the most distinctive feature of existing RL-based routing protocols. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Reward functions may be categorized into 3 classes:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\begin{itemize}
+			\item \tbf{Test-based reward functions}: the reward is assigned a constant value, depending the outcome of some \tit{test} \\
+
+			      \vspace{0.8cm}
+
+			      The most common test is checking if the packet was actually delivered to destination, which yields a \tit{binary outcome} for the reward
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H {\omega_k \cdot M_k}$$ where
+
+			      \begin{itemize}
+				      \item $C$ is a constant factor that depends on the test chosen by the protocols
+				      \item $H$ is the number of metrics of the protocol
+				      \item $\omega_k$ is the weight of the $k$-th metric
+				      \item $M_k$ is the value of the $k$-th metric
+			      \end{itemize}
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{Nonlinear reward functions}: this type is less common among RL-protocols, and they are designed with different forms of combinations of metrics depending on the specific application
+		\end{itemize}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Q-value updating rule forms}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	Over half of proposed RL-based routing algorithms are direct applications of Q-learning as originally proposed by \textcite{watkins}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However the remaining half of the protocols use procedures that either sued a modified Q-value updating rule, or do not rely on Q-learning at all.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Performance aspects}
+
+	TODO intro slide
+\end{frame}
+
+\begin{frame}
+	\frametitle{Communication overhead}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	\tbf{Communication overhead} is a crucial part of the design of a routing protocol, which depends on how the protocols defines the exchange of relvant information between nodes of the network. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Therefore, the overhead of the reviewed protocols have been categorized from a \tit{qualitative} point of view into:
+
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\begin{itemize}
+			\item \tbf{null overhead}: there is no exchange of information between agents
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item \tbf{low overhead}: the chosen next hop returns a feedback in an explicit ACK packet, or it includes its feedback when, in turn, it (re)forwards the packet \\
+
+			      \vspace{0.8cm}
+
+			      Half of the reviewed ptorocols fall under this category
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{medium overhead}: this is the case of protocols in which the feedback from the destination is propagated to all hops through an explicits ACK packet
+		\end{itemize}
+
+		\onslide<5>
+
+		\begin{itemize}
+			\item \tbf{medium overhead}: this is the case of protocols in which the feedback from the destination is propagated to all hops through an explicits ACK packet
+		\end{itemize}
+
+		\onslide<6>
+
+		\begin{itemize}
+			\item \tbf{high overhead}: TODO
+		\end{itemize}
+	\end{overprint}
 \end{frame}
 
 \end{document}
