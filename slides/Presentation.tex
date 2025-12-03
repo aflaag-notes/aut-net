@@ -212,8 +212,28 @@
 
 \section{Q-routing}
 
-\begin{frame}{TODO}
-	TODO intro slide
+\begin{frame}{Introduction to Q-routing}
+	\tbf{Q-routing} is an RL-based approach to distributed routing in packet-switched networks. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Each node maintains \tbf{estimates} of the delivery time to every destination through each neighbor, and updates these values through \tit{continuous interaction} with the network. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	By learning from real traffic rather than relying on static metrics, Q-routing adapts to
+
+	\begin{itemize}
+		\item congestion
+		\item topology changes
+		\item varying link qualities
+	\end{itemize}
+
+	allowing routing decisions to improve dynamically over time.
 \end{frame}
 
 \begin{frame}{The algorithm}
@@ -287,20 +307,31 @@
 	However, there are also problems arising from the algorithm itself, for instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
 \end{frame}
 
-\begin{frame}{TODO}
-	TODO conclusive slide
+\begin{frame}{From Q-routing to moden RL-based protocols}
+	Q-routing introduced the idea that routers can \tit{learn} optimal paths through experience rather than relying on fixed metrics. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+
+	As anticipated, its core principles laid the foundation for a \tit{wide range} of RL-driven routing algorithms developed in the following years. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Building on this early work, the literature now includes numerous protocols that extend and modify these ideas to address modern networking challenge.
 \end{frame}
 
 \section{Classification criteria}
 
-\begin{frame}{TODO}
-	TODO intro slide
-\end{frame}
-
 \begin{frame}{The criteria groups}
-	\frametitle{Classification criteria}
+	To make sense of this growing body of research, the authors introduced a set of \tbf{classification criteria} that allow to systematically \tit{categorize} and compare RL-based routing approaches of the literature. \\
 
-	TODO paragraph
+	\vspace{0.8cm}
+
+	\pause
 
 	These criteria are divided into 3 groups:
 
@@ -315,7 +346,12 @@
 	\frametitle{Context of use}
 	\framesubtitle{Classification criteria: Context of use}
 
-	TODO intro slide
+	The first group of criteria focuses on the \tbf{context} in which an RL-based routing protocol is applied. \\
+
+	\vspace{0.8cm}
+
+	\pause
+	This includes the nature of the target application and the operational conditions under which the protocol must perform.
 \end{frame}
 
 \begin{frame}
@@ -341,6 +377,25 @@
 
 	\pause
 	Indeed, RL should be applied in multicasting scenarios only when links are sufficiently stable and/or partial delivery is allowed, otherwise convergence may be outright \tit{impossible}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example of a Multicast protocol}
+	\framesubtitle{Classification criteria: Context of use}
+
+	An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	This was the first RL-based protocol for multicast routing in WSN, and it operates as follows:
+
+	\begin{itemize}
+		\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
+		\item routing to multiple destinations is defined as the \tbf{minimum cost path} starting at the source and reacting all destinations interested
+		\item the \tit{cost} of a spanning tree is defined as the number of one-hop broadcasts to reach all sinks
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -393,6 +448,26 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Example of a multi-metric protocol}
+	\framesubtitle{Classification criteria: Context of use}
+
+	The first protocol in the literature that considered \tit{multiple metrics} is the \tbf{AdaR (\tit{Adaptive Routing})}, proposed by \textcite{wang}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	In particular, they considered \tbf{four QoS metrics} for path selections:
+
+	\begin{itemize}
+		\item number of hops
+		\item residual energy
+		\item link reliability
+		\item number of routes crossing in a node
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
 	\frametitle{QoS guaranteeing}
 	\framesubtitle{Classification criteria: Context of use}
 
@@ -402,14 +477,38 @@
 
 	\pause
 
-	For instance, QoS guarantees are essential in \tit{multimedia applications}.
+	For instance, QoS guarantees are essential in \tit{multimedia applications}, such as video streams and streaming services.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example of a delay-aware protocol}
+	\framesubtitle{Classification criteria: Context of use}
+
+	An example of a protocol that provides \tit{soft} delay guarantees to delay-sensitive applications was introduced by \textcite{lin}, called \tbf{RL-RPC (\tit{RL-based Routing and Power Control})}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	In this protocol, RL is used to learn \tbf{channel conditions}. Moreover
+
+	\begin{itemize}
+		\item at each node the protocol selects the best route and the best power to forward packets
+		\item a packet is dropped when the \tit{deadline} --- included in the packet --- can no more be satisfied
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Design characteristics}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	TODO intro slide
+	The second group examines the \tbf{internal design choices} behind each protocol. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	This encompasses how states, actions, rewards, and learning models are defined, as well as the architectural decisions that shape how an agent interacts with the network.
 \end{frame}
 
 \begin{frame}
@@ -441,10 +540,17 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Agent states and Actions spaces}
+	\frametitle{Example of a model-based protocol}
 	\framesubtitle{Classification criteria: Design characteristics}
 
 	TODO
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agent states and Actions spaces}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	TODO QGrid!!
 \end{frame}
 
 \begin{frame}
@@ -515,7 +621,7 @@
 
 		\vspace{0.8cm}
 
-		In particular \tit{collaboration} concerns both RL and non-RL related exchanges, such as the exchange of \tbf{link-state information}..
+		In particular \tit{collaboration} concerns both RL and non-RL related exchanges, such as the exchange of \tbf{link-state information}.
 
 		\onslide<2>
 
@@ -525,8 +631,14 @@
 			\item \tbf{Reactive collaboration}: nodes only provide feedback upon reception of packet
 			\item \tbf{Proactive collaboration}: similar to the \tit{reactive} approach, but nodes additionally broadcast their link-state information through \tit{Hello packets} to their neightbors
 		\end{itemize}
-
 	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example of a proactive protocol}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	TODO find one
 \end{frame}
 
 \begin{frame}
@@ -560,6 +672,19 @@
 			\item Ants optimization
 		\end{itemize}
 	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example of a hybrid protocol}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	An example of a protocols that combines RL with other optimization techniques is \tbf{AdaR} (the first multi-metric protocol) \cite{wang}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	In particular, AdaR uses \tbf{Least Squares Policy Iteration (LSPI)}, which indeed enables \tit{faster convergence} to optimal solution without suffering initial parameter setting.
 \end{frame}
 
 \begin{frame}
@@ -627,6 +752,10 @@
 \end{frame}
 
 \begin{frame}
+	some kind of exmaple idk i'm tired
+\end{frame}
+
+\begin{frame}
 	\frametitle{Q-value updating rule forms}
 	\framesubtitle{Classification criteria: Design characteristics}
 
@@ -645,9 +774,21 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Performance aspects}
+	\frametitle{Example of a non Q-learning compliant protocol}
+	\framesubtitle{Classification criteria: Design characteristics}
+\end{frame}
 
-	TODO intro slide
+\begin{frame}
+	\frametitle{Performance aspects}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	Lastly, the third group evaluates protocols through their \tbf{performance outcomes}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	This includes qualitative assessments of overhead, responsiveness, and the metrics used to judge routing effectiveness.
 \end{frame}
 
 \begin{frame}
@@ -838,13 +979,80 @@
 
 	\pause
 
-	Therefore, they limited their effort to present the data reported by the origianl authors \tit{as-is}, without introducing any qualitative consideration.
+	Therefore, they limited their effort to present the data reported by the original authors \tit{as-is}, without introducing any qualitative consideration.
 \end{frame}
 
 \section{Conclusion and challenges}
 
-\begin{frame}{TODO}
-	TODO
+\begin{frame}{Conclusion}
+	RL is an efficient alternative to design routing protocols that
+
+	\begin{itemize}
+		\item provide \tbf{higher level} of QoS
+		\item optimize resource utilization
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, some \tbf{challenges} still remain and should be investigated further to provide evidence on applicability of RL-based protocols \tit{at large scale}.
+\end{frame}
+
+\begin{frame}{Proof of optimality}
+	As already mentioned, almost all reviewed papers \tit{did not} convincingly address \tbf{proof of convergence}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Since convergence is such an important requirement in the context of optimization, it should be treated as a core property of any RL-based routing approach. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Indeed, without it there is no guarantee that the learned policy will stabilize or consistently produce optimal/reliable routing decisions.
+\end{frame}
+
+\begin{frame}{Speed of convergence}
+	whenever large networks are considered, space exploration may take a very long time before optimal paths are discovered. This may result in poor end-to-end performance of the network. \\
+	\vspace{0.8cm}
+
+	\pause
+
+	convergence rates should be investigated to provide \tbf{bounds} of delay for let users know when the network can or cannot provide \tit{acceptable QoS levels}.
+\end{frame}
+
+\begin{frame}{Link-state information dissemination}
+	In most protocols, \tbf{link-state information} is used to calculate metrics, hence the convergence of the routing algorithms strictly depends on the \tit{freshness} of disseminated link-state information. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Therefore, the frequence of \tit{Hello packets} should be addressed in order to find a compromise between \tbf{protocol overhead} and \tbf{values of reward}.
+\end{frame}
+
+\begin{frame}{Metrics weights and learning parameters}
+	The \tbf{learning parameters} and the weights of the metrics have a significant impact on
+
+	\begin{itemize}
+		\item the \tit{quality} of paths
+		\item the \tit{speed} of convergence
+	\end{itemize}
+
+	However, determining the optimal set of parameters can be very \tit{difficult}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Hence, the authors suggest the development of a \tbf{methodology} to address this problem, which would make the deployment of RL-based routing protocols easier.
+\end{frame}
+
+\begin{frame}{Hybridization}
+	TODO todo
 \end{frame}
 
 \end{document}

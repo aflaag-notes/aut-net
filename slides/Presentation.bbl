@@ -45,6 +45,72 @@
     \field{year}{1993}
   \endentry
 
+  \entry{forster}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=FA}{%
+         family={Forster},
+         familyi={F\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MAL}{%
+         family={Murphy},
+         familyi={M\bibinitperiod},
+         given={Amy\bibnamedelima L},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{FAMAL1}
+    \strng{fullhash}{FAMAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{FM07}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{booktitle}{2007 3rd international conference on intelligent sensors, sensor networks and information}
+    \field{pages}{371\bibrangedash 376}
+    \field{title}{FROMS: Feedback routing for optimizing multiple sinks in WSN with reinforcement learning}
+    \field{year}{2007}
+  \endentry
+
+  \entry{lin}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=LZ}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Zhichu},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=vdSM}{%
+         prefix={van\bibnamedelima der},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Schaar},
+         familyi={S\bibinitperiod},
+         given={Mihaela},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{LZSMvd1}
+    \strng{fullhash}{LZSMvd1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{LS10}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{number}{1}
+    \field{pages}{102\bibrangedash 113}
+    \field{title}{Autonomic and distributed joint routing and power control for delay-sensitive applications in multi-hop wireless networks}
+    \field{volume}{10}
+    \field{journaltitle}{IEEE Transactions on Wireless Communications}
+    \field{year}{2010}
+  \endentry
+
   \entry{mammeri}{article}{}{}
     \name{author}{1}{}{%
       {{hash=MZ}{%
@@ -94,6 +160,37 @@
     \field{sortinithash}{W}
     \field{title}{Learning from delayed rewards}
     \field{year}{1989}
+  \endentry
+
+  \entry{wang}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=WP}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ping},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WT}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Ting},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{WPWT1}
+    \strng{fullhash}{WPWT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{WW06}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{booktitle}{The Sixth IEEE International Conference on Computer and Information Technology (CIT'06)}
+    \field{pages}{219\bibrangedash 219}
+    \field{title}{Adaptive routing for sensor networks using reinforcement learning}
+    \field{year}{2006}
   \endentry
 \enddatalist
 \endinput

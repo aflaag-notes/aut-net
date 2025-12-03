@@ -506,6 +506,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/google/carlito/Crlt-osf-ts1--base.tfm
 INPUT ./Presentation.toc
 INPUT ./Presentation.toc
 INPUT Presentation.toc
+INPUT /usr/share/texmf-dist/fonts/tfm/google/carlito/Crlt-BoldItalic-osf-ot1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/google/carlito/Crlt-osf-ot1.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -531,6 +532,7 @@ OUTPUT Presentation.run.xml
 INPUT /usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Italic.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Bold.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-BoldItalic.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Italic.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Regular.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

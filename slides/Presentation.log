@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  3 DEC 2025 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  3 DEC 2025 22:47
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1248,38 +1248,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 ]
 
-LaTeX Font Warning: Font shape `OT1/Crlt-OsF/m/sc' undefined
-(Font)              using `OT1/Crlt-OsF/m/n' instead on input line 244.
-
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 244.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 5.0pt on input line 244.
-
-
 [28
 
 ]
-Overfull \vbox (6.44453pt too high) detected at line 273
- []
-
-
 
 [29
 
 ]
-Overfull \vbox (6.44453pt too high) detected at line 273
- []
 
+LaTeX Font Warning: Font shape `OT1/Crlt-OsF/m/sc' undefined
+(Font)              using `OT1/Crlt-OsF/m/n' instead on input line 264.
+
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 264.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 264.
 
 
 [30
 
 ]
+Overfull \vbox (6.44453pt too high) detected at line 293
+ []
+
+
 
 [31
 
 ]
+Overfull \vbox (6.44453pt too high) detected at line 293
+ []
+
+
 
 [32
 
@@ -1287,7 +1287,7 @@ Overfull \vbox (6.44453pt too high) detected at line 273
 
 [33
 
-] (./Presentation.toc)
+]
 
 [34
 
@@ -1303,7 +1303,7 @@ Overfull \vbox (6.44453pt too high) detected at line 273
 
 [37
 
-]
+] (./Presentation.toc)
 
 [38
 
@@ -1396,20 +1396,10 @@ Overfull \vbox (6.44453pt too high) detected at line 273
 [60
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
-
- []
-
-
 
 [61
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
-
- []
-
-
 
 [62
 
@@ -1438,43 +1428,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 530--530
 [68
 
 ]
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 627.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 627.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 627.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 627.
-
-Overfull \vbox (13.22647pt too high) detected at line 627
- []
-
-
 
 [69
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 627
- []
-
-
 
 [70
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 627
- []
-
-
 
 [71
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 627
- []
-
-
 
 [72
 
@@ -1483,10 +1448,20 @@ Overfull \vbox (13.22647pt too high) detected at line 627
 [73
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 635--635
+
+ []
+
+
 
 [74
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 635--635
+
+ []
+
+
 
 [75
 
@@ -1527,18 +1502,43 @@ Overfull \vbox (13.22647pt too high) detected at line 627
 [84
 
 ]
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 752.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 752.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 752.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 752.
+
+Overfull \vbox (13.22647pt too high) detected at line 752
+ []
+
+
 
 [85
 
 ]
+Overfull \vbox (13.22647pt too high) detected at line 752
+ []
+
+
 
 [86
 
 ]
+Overfull \vbox (13.22647pt too high) detected at line 752
+ []
+
+
 
 [87
 
 ]
+Overfull \vbox (13.22647pt too high) detected at line 752
+ []
+
+
 
 [88
 
@@ -1555,20 +1555,10 @@ Overfull \vbox (13.22647pt too high) detected at line 627
 [91
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 821--821
-
- []
-
-
 
 [92
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 821--821
-
- []
-
-
 
 [93
 
@@ -1580,13 +1570,143 @@ Underfull \hbox (badness 10000) in paragraph at lines 821--821
 
 [95
 
-] (./Presentation.toc)
+]
 
 [96
 
 ]
 
 [97
+
+]
+
+[98
+
+]
+
+[99
+
+]
+
+[100
+
+]
+
+[101
+
+]
+
+[102
+
+]
+
+[103
+
+]
+
+[104
+
+]
+
+[105
+
+]
+
+[106
+
+]
+
+[107
+
+]
+
+[108
+
+]
+
+[109
+
+]
+
+[110
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 962--962
+
+ []
+
+
+
+[111
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 962--962
+
+ []
+
+
+
+[112
+
+]
+
+[113
+
+]
+
+[114
+
+] (./Presentation.toc)
+
+[115
+
+]
+
+[116
+
+]
+
+[117
+
+]
+
+[118
+
+]
+
+[119
+
+]
+
+[120
+
+]
+
+[121
+
+]
+
+[122
+
+]
+
+[123
+
+]
+
+[124
+
+]
+
+[125
+
+]
+
+[126
+
+]
+
+[127
 
 ]
 \tf@nav=\write7
@@ -1614,13 +1734,22 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33870 strings out of 475119
- 661650 string characters out of 5765715
- 1406508 words of memory out of 5000000
- 56053 multiletter control sequences out of 15000+600000
- 620101 words of font info for 93 fonts, out of 8000000 for 9000
+ 33964 strings out of 475119
+ 662767 string characters out of 5765715
+ 1406544 words of memory out of 5000000
+ 56083 multiletter control sequences out of 15000+600000
+ 622586 words of font info for 94 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  128i,13n,123p,1858b,1652s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{cite.0@lin} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@wang} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.0@forster} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{cite.0@mammeri} has been referenced but does not exist, replaced by a fixed one
 
@@ -1630,11 +1759,11 @@ pdfTeX warning (dest): name{cite.0@qrouting} has been referenced but does not ex
 
 pdfTeX warning (dest): name{cite.0@watkins} has been referenced but does not exist, replaced by a fixed one
 
-</usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Italic.pfb></usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Regular.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Bold.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Italic.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Presentation.pdf (97 pages, 1585470 bytes).
+</usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Italic.pfb></usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Regular.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Bold.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-BoldItalic.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Italic.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on Presentation.pdf (127 pages, 1648881 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
- 202 named destinations out of 1000 (max. 500000)
+ 904 PDF objects out of 1000 (max. 8388607)
+ 718 compressed objects within 8 object streams
+ 265 named destinations out of 1000 (max. 500000)
  90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
