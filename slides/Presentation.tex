@@ -32,8 +32,8 @@
 
 \titlebackground*{assets/background}
 
-\title{Review of TODO}
-\subtitle{TODO}
+\title{Reinforcement Learning Based Routing in Networks: Review and Classification of Approaches}
+\subtitle{A comprehensive review of the literature of RL-based protocols.}
 \course{Master's Degree in Computer Science}
 \author{\href{alessio.bandiera02@gmail.com}{Alessio Bandiera}}
 \IDnumber{1234567}
@@ -50,15 +50,169 @@
 \begin{document}
 \maketitle
 
-\section{Q-routing}
+\section{Introduction}
 
-\begin{frame}{TODO}
-	In 1993 \textcite{qlearning} proposed a hop-by-hop routing algorithm based on Q-learning, called \textbf{Q-routing}. \\
+\begin{frame}{Motivation}
+	Modern networks have become far more complex, dynamic, and diverse than early manually configured systems. This has made \tit{human} management \underline{insufficient}. \\
 
 	\vspace{0.8cm}
 
 	\pause
-	Most of the existing RL-based routing protocols today are extensions of their work.
+
+	As a result, \tbf{Machine Learning (ML)} is increasingly used to handle tasks such as
+
+	\begin{itemize}
+		\item traffic prediction
+		\item fault and configuration management
+		\item congestion control
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	The goal is to \tbf{automatically} learn network conditions in order to improve the user experience, while optimizing network resources. \\
+\end{frame}
+
+\begin{frame}{The routing problem}
+	In networks, \tbf{routing} is the problem of sleecting paths to send packets from source(s) to destination(s), while
+
+	\begin{itemize}
+		\item meeting \tbf{Quality of Service (QoS)} requirements
+		\item optimizing network resources
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, whenever multiple metrics are required, the routing problem becomes \textsf{NP}-complete. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	This is the reason why ML is seen as a strategy to revolutionize current \tbf{routing} techniques.
+\end{frame}
+
+\begin{frame}{Reinforcement Learning}
+	As already discussed throughout the lectures of this course, \tbf{Reinforcement Learning (RL)} is an ML technique inspired by behavioral psychology that provides system modeling based on \tit{agents} that interect with their \tit{environment} \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	For the purpose of finding better solutions for \tbf{routing} in networks, RL-based algorithms seem particularly promising because TODO
+\end{frame}
+
+\begin{frame}{Q-learning}
+	In 1989 \textcite{watkins} proposed the most-widely adopted flavour of Reinforcement Learning, called \tbf{Q-learning}. \\
+
+	\vspace{0.8cm}
+
+	\begin{overprint}
+		\onslide<1>
+
+		Q-learning is a \tbf{model-free} approach that aims at estimating the action function $Q_{\pi^*}(s, a)$, where $\pi^*$ is the optimal policy
+
+		\onslide<2>
+
+		Q-learning is a \tbf{model-free} approach that aims at estimating the action function $Q_{\pi^*}(s, a)$, where $\pi^*$ is the optimal policy \\
+
+		\vspace{0.8cm}
+
+		Very importantly, his approximation of the action function is \tit{independent of the policy} followed by the agents, making Q-learning applicable in a wide variety of contexts.
+
+		\onslide<3>
+
+		The action-value is updates through the following formula: $$Q_n(s_n, a_n) = (1 - \alpha) \cdot Q_{n - 1}(s_n, a_n) + \alpha \cdot \sbk{R_n + \gamma \cdot \max_{a \in \mathcal A}{Q_{n - 1}(s_{n + 1}, a)}}$$ where $\alpha$ is the \tbf{learning factor}, and $\gamma$ is the \tbf{discount rate}. \\
+
+		\vspace{0.8cm}
+
+		The initial Q-values $Q_0(s, a)$ are assumed given.
+
+		\onslide<4>
+
+		Moreover, this function can be rewritten in its more common \tbf{discrete time $t$} form: $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in \mathcal A}{Q(s_{t + 1}, a)}}$$
+
+		\onslide<5>
+
+		Most importantly, Watkins showed that Q-laerning \tbf{converges} to the optimum action-values with probability 1, as long as all actions are repeatedly sampled in all states. \\
+
+		\vspace{0.8cm}
+
+		Indeed, this is the reason why Q-learning is the most popular and effective larning technique in the field of delayed reinforcement.
+	\end{overprint}
+\end{frame}
+
+\begin{frame}{Q-routing}
+	In 1993 \textcite{qrouting} proposed a hop-by-hop routing algorithm based on Q-learning, called \textbf{Q-routing}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	After their seminal work, tens of works followed the original idea of using RL to optimize routing, while also considering the evolution of commuinication networks and users requirements. \\
+
+	\vspace{0.8cm}
+
+	\pause
+	In fact, most of the existing RL-based routing protocols today are extensions of their original work.
+\end{frame}
+
+\begin{frame}{The work in exam}
+	The paper that will be discussed today was published in 2019 by \textcite{mammeri}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Their work is a review of \tbf{60 papers}, which essentially covers the literature of RL-based routing algorithms completely. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	In particular, their work has 2 main objectives:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+		\onslide<3>
+
+		\begin{enumerate}
+			\item provide a \tbf{comprehensive peresentation} of the main characteristics of RL-based routing protocols
+		\end{enumerate}
+
+		\onslide<4>
+
+		\begin{enumerate}
+			\item provide a \tbf{comprehensive peresentation} of the main characteristics of RL-based routing protocols
+			\item provide \tbf{classification criteria} to enable analysis and comparison of existing protocols
+		\end{enumerate}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}{Table of contents}
+	This presentation will first provide a general idea of \tbf{Q-routing}, which has been a very influential idea and most of the current literature is based on this RL-based algorithm. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Subsequently, the most important segment of this review will be presented: the \tbf{classification criteria} that the authors defined in order to categorize the literature. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	To their knowledge, the authors state that their work is the first in the literature that proposed classification criteria to help comparing all available RL-based routing protocols in the literature. \\
+\end{frame}
+
+\section{Q-routing}
+
+\begin{frame}{TODO}
+	TODO intro slide
 \end{frame}
 
 \begin{frame}{The algorithm}
@@ -78,8 +232,6 @@
 		\EndWhile
 		\EndFunction
 	\end{algorithmic}
-
-	\pause
 
 	\begin{itemize}
 		\item $i$ is the node that is currently running the algorithm
@@ -119,11 +271,11 @@
 		Upon sending packet $P$ to node $j^*$, node $i$ receives back from node $j^*$ the estimate $$\theta_{j^*}(d) = \min_{k \in \mathcal N(j^*)}{Q_{j^*}(d, k)}$$
 
 		\onslide<2>
-		Then, node $i$ updates $Q_i(d, j^*)$ based on the \tit{update formula} for Q-learning: $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in \mathcal A}(s_{t + 1}, a)}$$
+		Then, node $i$ updates $Q_i(d, j^*)$ based on the \tit{update formula} for Q-learning described earlier: $$Q(s_t, a_t) = (1 - \alpha) \cdot Q(s_t, a_t) + \alpha \cdot \sbk{R_{t + 1} + \gamma \cdot \max_{a \in \mathcal A}(s_{t + 1}, a)}$$
 	\end{overprint}
 \end{frame}
 
-\begin{frame}{Flaws}
+\begin{frame}{Flaws of Q-learning}
 	Despite the wide adoption, Q-routing has some flaws. Some problems are direct consequences of Q-learning such as
 
 	\begin{itemize}
@@ -131,23 +283,27 @@
 		\item \tit{high parameter setting sensitivity}
 	\end{itemize}
 
-	However, there are also problems arising from the algorithm itself. \\
 	\vspace{0.8cm}
 
 	\pause
-	For instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
+
+	However, there are also problems arising from the algorithm itself, for instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
+\end{frame}
+
+\begin{frame}{TODO}
+	TODO conclusive slide
 \end{frame}
 
 \section{Classification criteria}
 
+\begin{frame}{TODO}
+	TODO intro slide
+\end{frame}
+
 \begin{frame}{The criteria groups}
 	\frametitle{Classification criteria}
 
-	To their knowledge, the authors state that their work is the first in the literature that proposed \textbf{classification criteria} to help comparing all available RL-based routing protocols in the literature. \\
-
-	\vspace{0.8cm}
-
-	\pause
+	TODO paragraph
 
 	These criteria are divided into 3 groups:
 
@@ -200,7 +356,7 @@
 
 	\pause
 
-	\tbf{Quality of Service (QoS)} metrics that have been addressed as objectives for RL-based routing include:
+	QoS metrics that have been addressed as objectives for RL-based routing include:
 
 	\begin{overprint}
 		\onslide<1>
@@ -461,7 +617,7 @@
 		\onslide<3>
 
 		\begin{itemize}
-			\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H {\omega_k \cdot M_k}$$ where
+			\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H {\omega_k \cdot M_k}$$
 
 			      \begin{itemize}
 				      \item $C$ is a constant factor that depends on the test chosen by the protocols
@@ -483,7 +639,7 @@
 	\frametitle{Q-value updating rule forms}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	Over half of proposed RL-based routing algorithms are direct applications of Q-learning as originally proposed by \textcite{watkins}. \\
+	Over half of proposed RL-based routing algorithms are direct applications of Q-learning as originally proposed by Watkins. \\
 
 	\vspace{0.8cm}
 
@@ -544,9 +700,172 @@
 		\onslide<6>
 
 		\begin{itemize}
-			\item \tbf{high overhead}: TODO
+			\item \tbf{high overhead}: these protocols require that nodes periodically exchange link-state information
 		\end{itemize}
 	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{State space overhead}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	RL-based algorithms requires \tit{memory} to store the \tbf{states of the agents}, and the number of states may be very high. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Hence, the protocols can be \tit{qualitatively} grouped based on the \tbf{state space overhead}:
+
+	\begin{overprint}
+		\onslide<1>
+
+		\onslide<2>
+
+		\begin{itemize}
+			\item \tbf{very low overhead}: then when state space is states of a packet TODO WHAT
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item \tbf{low overhead}: when the state space is the node IDs --- most of the reviewed papers fall under this category
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{limited overhead}: when the state space depends on external factors --- e.g. the number of transmission power leves, the maximum number of available channels, etc.
+		\end{itemize}
+
+		\onslide<5>
+
+		\begin{itemize}
+			\item \tbf{high overhead}: when the state space is a list of whole paths withthier current characteristics
+
+		\end{itemize}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Action space overhead}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	Additionally, RL-based algorithm also require \tit{memory} store all the \tbf{possible actions} that agents can perform. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Therefore again, the protocols can be \tit{qualitatively} grouped based on the \tbf{action space}:
+
+	\begin{overprint}
+		\onslide<1>
+
+		\onslide<2>
+
+		\begin{itemize}
+			\item \tbf{low overhead}: when the action space depends on external factors TODO WHAT WHY
+		\end{itemize}
+
+		\onslide<3>
+
+		\begin{itemize}
+			\item \tbf{medium overhead}: when the action space depends on the number of nodes in the neighborhood
+		\end{itemize}
+
+		\onslide<4>
+
+		\begin{itemize}
+			\item \tbf{high overhead}: when the action space depends on either
+			      \begin{itemize}
+				      \item the number of \tit{dynamic paths}
+				      \item the number of or \tit{predefined paths}
+				      \item the number of \tit{grids} in the network --- WHAT ARE THESE
+			      \end{itemize}
+		\end{itemize}
+
+		\onslide<5>
+
+		\begin{itemize}
+			\item \tbf{very high overhead}: when the state space depends on combinations of channels subsets or paths
+		\end{itemize}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proof of convergence}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	In the optimization field, the \tbf{convergence} to optimal solutions is an \tit{expected} property. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Nevertheless, many existing techniques to solve multicriteria optimization problems are not guarantted to reach the optimal solution. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Regearding RL-based algorithms, from the original work of \textcite{watkins} it is possible to derive proofs of convergence of RL algorithms, however:
+
+	\begin{itemize}
+		\item not all RL-based approaches are based on the standard implementation of Q-learning
+		\item many papers rely on \tbf{additional assumptions} that guarantee convergence
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	\begin{overprint}
+		\onslide<1>
+
+		Still, in real world scenarios it is hard to establish the \tbf{satisfiability} of such assumptions.
+
+		\onslide<2>
+
+		Proving convergence rigorously remains an issue for most protocols that are not perfectly Q-learning compliant
+
+		\onslide<3>
+
+		Rather, convergence is usually assessed from \tbf{simulations} or just \tit{stated as reachable eventually} without providing any proof of such claims.
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Protocol performance (in simulations)}
+	\framesubtitle{Classification criteria: Performance aspects}
+
+	It would be clearly important to categorize the protocols based on the \tbf{performance} based on the simulations. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, given the
+
+	\begin{itemize}
+		\item large number of reviewed protocols
+		\item wide variety of reward functions
+		\item wide range of metric weights
+	\end{itemize}
+
+	the authors found impratical to even provide \tit{qualitative} evaluation of the performance of each single protocol. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Therefore, they limited their effor to present the data reported by the origianl authors \tit{as-is}.
+\end{frame}
+
+\section{Conclusion and challenges}
+
+\begin{frame}{TODO}
+	TODO
 \end{frame}
 
 \end{document}

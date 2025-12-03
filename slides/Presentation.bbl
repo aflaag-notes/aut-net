@@ -17,6 +17,60 @@
 \endgroup
 
 \datalist[entry]{anyt/global//global/global/global}
+  \entry{qrouting}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=BJ}{%
+         family={Boyan},
+         familyi={B\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Littman},
+         familyi={L\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJLM1}
+    \strng{fullhash}{BJLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{BL93}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{title}{Packet routing in dynamically changing networks: A reinforcement learning approach}
+    \field{volume}{6}
+    \field{journaltitle}{Advances in neural information processing systems}
+    \field{year}{1993}
+  \endentry
+
+  \entry{mammeri}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=MZ}{%
+         family={Mammeri},
+         familyi={M\bibinitperiod},
+         given={Zoubir},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{MZ1}
+    \strng{fullhash}{MZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{Mam19}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{55916\bibrangedash 55950}
+    \field{title}{Reinforcement learning based routing in networks: Review and classification of approaches}
+    \field{volume}{7}
+    \field{journaltitle}{Ieee Access}
+    \field{year}{2019}
+  \endentry
+
   \entry{watkins}{article}{}{}
     \true{moreauthor}
     \true{morelabelname}

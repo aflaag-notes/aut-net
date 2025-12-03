@@ -1,2 +1,4 @@
-\beamer@sectionintoc {1}{Q-routing}{2}{0}{1}
-\beamer@sectionintoc {2}{Classification criteria}{11}{0}{2}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Q-routing}{26}{0}{2}
+\beamer@sectionintoc {3}{Classification criteria}{34}{0}{3}
+\beamer@sectionintoc {4}{Conclusion and challenges}{100}{0}{4}
