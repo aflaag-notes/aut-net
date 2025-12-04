@@ -137,6 +137,39 @@
     \field{year}{2019}
   \endentry
 
+  \entry{aodv}{report}{}{}
+    \name{author}{3}{}{%
+      {{hash=PC}{%
+         family={Perkins},
+         familyi={P\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BRE}{%
+         family={Belding-Royer},
+         familyi={B\bibinithyphendelim R\bibinitperiod},
+         given={Elizabeth},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=DS}{%
+         family={Das},
+         familyi={D\bibinitperiod},
+         given={Samir},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PCBREDS1}
+    \strng{fullhash}{PCBREDS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{PBRD03}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Ad hoc on-demand distance vector (AODV) routing}
+    \field{type}{techreport}
+    \field{year}{2003}
+  \endentry
+
   \entry{watkins}{article}{}{}
     \true{moreauthor}
     \true{morelabelname}

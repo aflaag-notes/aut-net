@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  29 NOV 2025 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  4 DEC 2025 07:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1813,19 +1813,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Package cleveref Info: loaded `english' language definitions on input line 219.
 [7]
 Chapter 3.
-<../assets/graph.png, id=297, 957.5775pt x 659.46375pt>
-File: ../assets/graph.png Graphic file (type png)
-<use ../assets/graph.png>
-Package pdftex.def Info: ../assets/graph.png  used on input line 221.
+<../slides/assets/graph.png, id=297, 957.5775pt x 659.46375pt>
+File: ../slides/assets/graph.png Graphic file (type png)
+<use ../slides/assets/graph.png>
+Package pdftex.def Info: ../slides/assets/graph.png  used on input line 221.
 (pdftex.def)             Requested size: 383.02422pt x 263.78082pt.
 
 
 Package cleveref Info: loaded `english' language definitions on input line 229.
 [8
 
- <../assets/graph.png (PNG copy)>]
+ <../slides/assets/graph.png (PNG copy)>]
 
-Package cleveref Info: loaded `english' language definitions on input line 256.
+Package cleveref Info: loaded `english' language definitions on input line 255.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1833,14 +1833,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 256.
+Package cleveref Info: loaded `english' language definitions on input line 255.
 [9]
 
-LaTeX Warning: Marginpar on page 10 moved.
-
-
-
-Package cleveref Info: loaded `english' language definitions on input line 280.
+Package cleveref Info: loaded `english' language definitions on input line 267.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1848,10 +1844,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 280.
+Package cleveref Info: loaded `english' language definitions on input line 267.
 [10]
 
-Package cleveref Info: loaded `english' language definitions on input line 306.
+Package cleveref Info: loaded `english' language definitions on input line 297.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1859,7 +1855,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 306.
+Package cleveref Info: loaded `english' language definitions on input line 297.
 [11]
 Underfull \hbox (badness 1354) in paragraph at lines 323--323
 []|\T1/cmr/m/n/12 Select a sub-set of neigh-bors $\OML/cmm/m/it/12 S$ \T1/cmr/m/n/12 and
@@ -1867,7 +1863,7 @@ Underfull \hbox (badness 1354) in paragraph at lines 323--323
 
 
 
-Package cleveref Info: loaded `english' language definitions on input line 349.
+Package cleveref Info: loaded `english' language definitions on input line 339.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1875,10 +1871,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 349.
+Package cleveref Info: loaded `english' language definitions on input line 339.
 [12]
 
-Package cleveref Info: loaded `english' language definitions on input line 381.
+Package cleveref Info: loaded `english' language definitions on input line 356.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1886,10 +1882,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 381.
+Package cleveref Info: loaded `english' language definitions on input line 356.
 [13]
 
-Package cleveref Info: loaded `english' language definitions on input line 409.
+Package cleveref Info: loaded `english' language definitions on input line 385.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1897,10 +1893,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 409.
+Package cleveref Info: loaded `english' language definitions on input line 385.
 [14]
 
-Package cleveref Info: loaded `english' language definitions on input line 440.
+Package cleveref Info: loaded `english' language definitions on input line 413.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1908,9 +1904,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-Package cleveref Info: loaded `english' language definitions on input line 440.
+Package cleveref Info: loaded `english' language definitions on input line 413.
 [15]
 
+Package cleveref Info: loaded `english' language definitions on input line 444.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+Package cleveref Info: loaded `english' language definitions on input line 444.
+[16]
+
 Package cleveref Info: loaded `english' language definitions on input line 445.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1920,17 +1927,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 Package cleveref Info: loaded `english' language definitions on input line 445.
-[16]
+[17]
 Chapter 4.
 
 
 Package cleveref Info: loaded `english' language definitions on input line 460.
-[17
+[18
 
 ]
 
 Package cleveref Info: loaded `english' language definitions on input line 462.
-[18
+[19
 
 ] (./AutonomousNetworking.aux
 Package cleveref Info: loaded `english' language definitions on input line 13.
@@ -1944,24 +1951,24 @@ L3 programming layer <2025-01-18>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `AutonomousNetworking.out' has not changed.
-(rerunfilecheck)             Checksum: 81C530FBC6E2428F57F27BF53B5896A7;5499.
+(rerunfilecheck)             Checksum: C895A0D14C3632CFD143F8989226DD54;5476.
 Package logreq Info: Writing requests to 'AutonomousNetworking.run.xml'.
 \openout1 = `AutonomousNetworking.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 77369 strings out of 475119
- 1884793 string characters out of 5765715
- 3113940 words of memory out of 5000000
- 99254 multiletter control sequences out of 15000+600000
+ 77343 strings out of 475119
+ 1884256 string characters out of 5765715
+ 3111504 words of memory out of 5000000
+ 99230 multiletter control sequences out of 15000+600000
  586618 words of font info for 96 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  115i,12n,123p,1909b,2755s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on AutonomousNetworking.pdf (21 pages, 591823 bytes).
+Output written on AutonomousNetworking.pdf (22 pages, 592247 bytes).
 PDF statistics:
- 488 PDF objects out of 1000 (max. 8388607)
+ 489 PDF objects out of 1000 (max. 8388607)
  408 compressed objects within 5 object streams
- 88 named destinations out of 1000 (max. 500000)
+ 86 named destinations out of 1000 (max. 500000)
  279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

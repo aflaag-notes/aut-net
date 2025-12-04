@@ -11,25 +11,25 @@
 \contentsline {subsection}{\numberline {2.2.2}Q-routing}{6}{subsection.2.2.2}%
 \contentsline {chapter}{\numberline {3}Classification criteria}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Context of use}{9}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Network class and Assumptions}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.1}Addressed network classes}{9}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Routing Optimization Context}{9}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Unicast or Multicast}{10}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}QoS metrics for optimization}{10}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}QoS guaranteeing}{11}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}Design characteristics}{11}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Learning model}{11}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Agent states and Action spaces}{11}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Solution space exploration}{12}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.2}Design characteristics}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Learning model}{12}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Agent states and Action spaces}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Solution space exploration}{13}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Agents collaboration}{13}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Hybridation with other optimization techniques}{13}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.5}Hybridation with other optimization techniques}{14}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}Number of parameters to tune}{14}{subsection.3.2.6}%
 \contentsline {subsection}{\numberline {3.2.7}Reward functions}{14}{subsection.3.2.7}%
-\contentsline {subsection}{\numberline {3.2.8}Q-value updating rule forms}{14}{subsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.2.8}Q-value updating rule forms}{15}{subsection.3.2.8}%
 \contentsline {section}{\numberline {3.3}Performance aspects}{15}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Communication overhead}{15}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}State space overhead}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Action space overhead}{15}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.2}State space overhead}{16}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Action space overhead}{16}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Proof of convergence}{16}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Protocol performance (in simulations)}{16}{subsection.3.3.5}%
-\contentsline {chapter}{\numberline {4}Conclusions and Challenges}{17}{chapter.4}%
-\contentsline {chapter}{Bibliography}{17}{section*.14}%
+\contentsline {subsection}{\numberline {3.3.5}Protocol performance (in simulations)}{17}{subsection.3.3.5}%
+\contentsline {chapter}{\numberline {4}Conclusions and Challenges}{18}{chapter.4}%
+\contentsline {chapter}{Bibliography}{18}{section*.11}%

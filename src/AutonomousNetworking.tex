@@ -218,7 +218,7 @@ Despite the wide adoption of this protocol over the years, Q-routing is still fa
 
 \chapter{Classification criteria}
 
-\centeredimage[TODO]{0.4}{../assets/graph.png}
+\centeredimage[TODO]{0.4}{../slides/assets/graph.png}
 
 The authors underline that, to their knowledge, their work is the first in the literature that proposes classification criteria to help understanding and comparing all the available RL-based routing protocols. These criteria are divided into 3 groups:
 
@@ -232,9 +232,9 @@ We will cover each criteria in the
 
 \section{Context of use}
 
-\subsection{Network class and Assumptions}
+\subsection{Addressed network classes}
 
-TODO \todo{non ho capito}
+RL-based routing protocols have progressively evolved across many \tit{types of networks} --- wired, wireless, mesh, cooperative, optical, MANETs, WSNs, vehicular, DTNs, FANETs, social networks, cognitive radio, SDN, NDN, and P2P. Indeed, the first kind of general categorization is the network class of each protocol. Beyond network type, some protocols also rely on \tbf{specific assumptions}, such as having prior knowledge of traffic distributions, node localization services, or the possibility of transmission errors.
 
 \subsection{Routing Optimization Context}
 
@@ -253,8 +253,8 @@ The authors outlined 6 different \tit{routing optimization contexts}, which we w
 	\item \tbf{Route requrest driven optimization}: a source $s$ that has data to send to $d$, first sends a Route Request (RR) packet. The latter is then disseminated in the network, and each node that receives the RR packet can decide to partecipate or not --- if it agrees to partecipate, it selects the next node to forward the RR packet to, and this process continues until $d$ is reached. Once a path is found, all packets from $s$ to $d$ are routed through this path. Then, at the end of each transmission a feedback is sent back to the sender regarding the performance of current nodes. Most protocols in this category are extensions to the \tbf{AODV protocol} \cite{aodv}.
 	\item \tbf{Context request driven optimization}: this is a setting that describes peer-to-peer systems and named data networks, in which a node $s$ that is interested in some content $C$ sends its requrest to receive data packets from the nodes $d$ possessing $C$. Nodes on the path from $s$ to $d$ can then decide to forward the request to locate the requested content, and when data packets containing $C$ are forwarded the relay nodes receive feedback and adapt their paths accordingly.
 	\item \tbf{Predefined routes driven optimization}: each source builds \tit{offline} a list of paths of reachability for any target destination. Hence, when a source has packets to send it selects a path amonde the predefined ones. If a link break on the selected path is detected, the source switches to another predefined path. Periodically, a feedback is sent backward to the source, which will adapt its path selection among the predefined list.
-	\item \tbf{Cluster driven optimization}: \todo{me so rotto}
-	\item \tbf{Routing protocol driven optimization}: \todo{me so rotto}
+	\item \tbf{Cluster driven optimization}: \tit{clustering} is the process of partitioning the set of nodes into groups, with one \curlyquotes{cluster-head} per group. Data packets are transmitted from sources to destination following a clustered hierarchy of the network --- i.e. nodes (members of a cluster) send their data packets to their cluster-head, which in turn send the packets to a higher level cluster-head, which in turn sends the packet to a higher level cluster-head or to the destination. Depending on the resources, a cluster-head determines the number of members that can join in the cluster. After the transmissionof data packets from members, cluster-heads receive feedback and adjust their cluster size.
+	\item \tbf{Routing protocol driven optimization}: it is a fairly recent approach, and in thic framework there is a central node that ha sa set of routing protocols candidates (e.g. AODV, DSDV, DSR, OLSR, GPSR, etc.) that can be used for forwarding packets by \tit{slave nodes}. In each time interval, the central node selects a routing protocol and calculates the routing tables, then sends them to slave nodes to configure their forwarding tables. Afterwards, a feedback is collected by the central node regarding the performance of computed routing tables, and it may decide to change the current routing protocol for the next time interval depending on the observed performance. AFter some time intervals, the system converges to the most adequate routing protocol.
 \end{enumerate}
 
 \subsection{Unicast or Multicast}

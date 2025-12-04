@@ -355,17 +355,113 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Network class and assumptions}
+	\frametitle{Addressed network classes}
 	\framesubtitle{Classification criteria: Context of use}
 
-	TODO
+	Not suprisingly, the first criteria of categorization is the \tbf{type of network} of the protocol, since there are various different types:
+
+	\begin{itemize}
+		\item WSNs
+		\item DTNs
+		\item FANETs
+		\item MANETs
+		\item etc.
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	Moreover, some protocols rely on \tbf{specific assumptions} such as having
+
+	\begin{itemize}
+		\item prior knowledge of traffic distributions
+		\item node localization services
+		\item the possibility of transmission errors
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Routing optimization context}
 	\framesubtitle{Classification criteria: Context of use}
 
-	A \tit{good} protocol should be able to determine and select the optimal paths to convey data from sources to destinations. This can be TODO
+	The ability of a protocol to perform path selection optimally depends on
+
+	\begin{itemize}
+		\item the roles assigned to data sources
+		\item the roles assigned to relaying nodes
+		\item the initial assumptions about routing
+	\end{itemize}
+
+	\pause
+
+	From this observation, the authors outlined 6 different \tbf{routing optimization contexts}:
+
+	\begin{overprint}
+		\onslide<1>
+		\onslide<2>
+
+		\begin{enumerate}
+			\item \tbf{Data-packet driven optimization context}:
+			      \begin{itemize}
+				      \item the transmission of packets happens \tit{hop-by-hop} from $s$ to $d$
+				      \item upon receival of a packet, $d$ sends back a feedback on the transmission
+			      \end{itemize}
+
+			      After some amount of forwarded packets, the routing process converges to the selection of optimal paths
+		\end{enumerate}
+
+		\onslide<3>
+
+		\begin{enumerate}
+			\setcounter{enumi}{1}
+			\item \tbf{Route request diven optimization context}:
+
+			      \begin{itemize}
+				      \item a source $s$ that has data to send to $d$ first sends a \tit{Route Request (RR)} packet, which is disseminated in the network
+				      \item each node can decide to partecipate or not: if a node agrees to partecipate, it selects thje next node to forward the RR to, and this process continues until $d$ is reached
+				      \item once a path is found, all packets $s \to d$ are routed through this path
+				      \item at the end of each transmission a feedback is sent back to $s$
+			      \end{itemize}
+
+			      Most protocols in this category are extensions to the \tbf{AODV protocol} \cite{aodv}.
+		\end{enumerate}
+
+		\onslide<4>
+
+		\begin{enumerate}
+			\setcounter{enumi}{2}
+			\item \tbf{Context request driven optimization context}: it describes P2P systems
+
+			      \begin{itemize}
+				      \item in this context a node $s$ is interested in some content $C$ possessed by $d$
+				      \item then, it sends a request to $d$ to receive data packets from $d$
+				      \item nodes on the path $s \to d$ can then decide to forward the requrest to locate the requested content
+				      \item when data packets containing $C$ are forwarded the relay nodes receive feedback and adapt their paths accordingly
+			      \end{itemize}
+		\end{enumerate}
+
+		\onslide<5>
+
+		\begin{enumerate}
+			\setcounter{enumi}{3}
+			\item \tbf{Predefined routes driven optimization context}:
+
+			      \begin{itemize}
+				      \item each source builds \tit{offline} a list of paths of reachability for any target destination
+				      \item when a source has packets to send it selects a path among the predefined ones
+				      \item if a \tit{link break} is detected on the selected path, the source switches to another predefined path
+				      \item periodically, a feedback is sent backward to the source, which will adapt its path selection
+			      \end{itemize}
+		\end{enumerate}
+
+		\onslide<6>
+
+		\begin{enumerate}
+			\setcounter{enumi}{4}
+			\item \tbf{Cluster driven optimization}: TODO
+		\end{enumerate}
+	\end{overprint}
 \end{frame}
 
 \begin{frame}
@@ -434,8 +530,8 @@
 		\begin{itemize}
 			\item \tbf{network lifetime}: average time over which the network is still alive
 			\item \tbf{transmission power}: power for performing a transmission
-			\item \tbf{hit delay}: average delay to return requrested data in peer-to-peer networks
-			\item \tbf{hit ratio}: proportion of satisfied requrests in peer-to-peer networks
+			\item \tbf{hit delay}: average delay to return requrested data in P2P networks
+			\item \tbf{hit ratio}: proportion of satisfied requrests in P2P networks
 		\end{itemize}
 
 		\onslide<5>
@@ -543,14 +639,14 @@
 	\frametitle{Example of a model-based protocol}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	TODO
+	TODO QGrid!!
 \end{frame}
 
 \begin{frame}
 	\frametitle{Agent states and Actions spaces}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	TODO QGrid!!
+	TODO
 \end{frame}
 
 \begin{frame}
@@ -722,17 +818,18 @@
 		\onslide<1>
 		\onslide<2>
 
-		\begin{itemize}
+		\begin{enumerate}
 			\item \tbf{Test-based reward functions}: the reward is assigned a constant value, depending the outcome of some \tit{test}. \\
 
 			      \vspace{0.8cm}
 
 			      The most common test is checking if the packet was actually delivered to destination, which yields a \tit{binary outcome} for the reward.
-		\end{itemize}
+		\end{enumerate}
 
 		\onslide<3>
 
-		\begin{itemize}
+		\begin{enumerate}
+			\setcounter{enumi}{1}
 			\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H {\omega_k \cdot M_k}$$
 
 			      \begin{itemize}
@@ -741,13 +838,14 @@
 				      \item $\omega_k$ is the weight of the $k$-th metric
 				      \item $M_k$ is the value of the $k$-th metric
 			      \end{itemize}
-		\end{itemize}
+		\end{enumerate}
 
 		\onslide<4>
 
-		\begin{itemize}
+		\begin{enumerate}
+			\setcounter{enumi}{2}
 			\item \tbf{Nonlinear reward functions}: this type is less common among RL-protocols, and they are designed with different forms of combinations of metrics depending on the specific application
-		\end{itemize}
+		\end{enumerate}
 	\end{overprint}
 \end{frame}
 
