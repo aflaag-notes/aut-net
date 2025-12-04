@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  4 DEC 2025 09:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.15)  4 DEC 2025 11:55
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1093,7 +1093,11 @@ LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
 [2
 
  <./assets/logo_RGB_negative.png>]
-LaTeX Font Info:    Trying to load font information for TS1+Crlt-OsF on input line 76.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 5.0pt on input line 77.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 5.0pt on input line 77.
+LaTeX Font Info:    Trying to load font information for TS1+Crlt-OsF on input line 77.
  (/usr/share/texmf-dist/tex/latex/carlito/TS1Crlt-OsF.fd
 File: TS1Crlt-OsF.fd 2022/10/05 (autoinst) Font definitions for TS1/Crlt-OsF.
 )
@@ -1129,26 +1133,16 @@ File: TS1Crlt-OsF.fd 2022/10/05 (autoinst) Font definitions for TS1/Crlt-OsF.
 [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
-
- []
-
-
 
 [11
 
-{/usr/share/texmf-dist/fonts/enc/dvips/caladea/cld_prieif.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
@@ -1156,13 +1150,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 [12
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+{/usr/share/texmf-dist/fonts/enc/dvips/caladea/cld_prieif.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
@@ -1171,12 +1165,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
@@ -1185,12 +1179,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 [14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
 
  []
 
@@ -1199,6 +1193,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 [15
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--150
+
+ []
+
+
 
 [16
 
@@ -1238,11 +1242,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 [25
 
-] (./Presentation.toc)
+]
 
 [26
 
-]
+] (./Presentation.toc)
 
 [27
 
@@ -1256,27 +1260,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
 ]
 
-LaTeX Font Warning: Font shape `OT1/Crlt-OsF/m/sc' undefined
-(Font)              using `OT1/Crlt-OsF/m/n' instead on input line 264.
-
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 264.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 5.0pt on input line 264.
-
-
 [30
 
 ]
-Overfull \vbox (6.44453pt too high) detected at line 293
- []
+
+LaTeX Font Warning: Font shape `OT1/Crlt-OsF/m/sc' undefined
+(Font)              using `OT1/Crlt-OsF/m/n' instead on input line 265.
 
 
 
 [31
 
 ]
-Overfull \vbox (6.44453pt too high) detected at line 293
+Overfull \vbox (6.44453pt too high) detected at line 294
  []
 
 
@@ -1284,6 +1280,10 @@ Overfull \vbox (6.44453pt too high) detected at line 293
 [32
 
 ]
+Overfull \vbox (6.44453pt too high) detected at line 294
+ []
+
+
 
 [33
 
@@ -1295,7 +1295,7 @@ Overfull \vbox (6.44453pt too high) detected at line 293
 
 [35
 
-]
+] (./Presentation.toc)
 
 [36
 
@@ -1303,7 +1303,7 @@ Overfull \vbox (6.44453pt too high) detected at line 293
 
 [37
 
-] (./Presentation.toc)
+]
 
 [38
 
@@ -1328,20 +1328,24 @@ Overfull \vbox (6.44453pt too high) detected at line 293
 [43
 
 ]
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 492.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 492.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 492.
+LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 492.
+
+Overfull \vbox (1.61444pt too high) detected at line 492
+ []
+
+
 
 [44
 
 ]
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 487.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 487.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 487.
-LaTeX Font Info:    Font shape `OT1/Caladea-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 487.
-
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1349,7 +1353,7 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [45
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1357,7 +1361,7 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [46
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1365,7 +1369,7 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [47
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1373,7 +1377,7 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [48
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1381,7 +1385,7 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [49
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
+Overfull \vbox (1.61444pt too high) detected at line 492
  []
 
 
@@ -1389,10 +1393,6 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [50
 
 ]
-Overfull \vbox (1.61444pt too high) detected at line 487
- []
-
-
 
 [51
 
@@ -1473,10 +1473,20 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [70
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 696--696
+
+ []
+
+
 
 [71
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 696--696
+
+ []
+
+
 
 [72
 
@@ -1521,16 +1531,11 @@ Overfull \vbox (1.61444pt too high) detected at line 487
 [82
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 770--770
-
- []
-
-
 
 [83
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 770--770
+Underfull \hbox (badness 10000) in paragraph at lines 845--845
 
  []
 
@@ -1539,6 +1544,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 770--770
 [84
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 845--845
+
+ []
+
+
 
 [85
 
@@ -1575,34 +1585,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 770--770
 [93
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 889
- []
-
-
 
 [94
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 889
- []
-
-
 
 [95
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 889
- []
-
-
 
 [96
 
 ]
-Overfull \vbox (13.22647pt too high) detected at line 889
- []
-
-
 
 [97
 
@@ -1691,11 +1685,16 @@ Overfull \vbox (13.22647pt too high) detected at line 889
 [118
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1166
+
+ []
+
+
 
 [119
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1099--1099
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1166
 
  []
 
@@ -1704,11 +1703,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 1099--1099
 [120
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1099--1099
-
- []
-
-
 
 [121
 
@@ -1716,11 +1710,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 1099--1099
 
 [122
 
-]
+] (./Presentation.toc)
 
 [123
 
-] (./Presentation.toc)
+]
 
 [124
 
@@ -1773,6 +1767,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 1099--1099
 [136
 
 ]
+
+[137
+
+]
+
+[138
+
+]
+
+[139
+
+]
+
+[140
+
+]
+
+[141
+
+]
+
+[142
+
+]
 \tf@nav=\write7
 \openout7 = `Presentation.nav'.
 
@@ -1798,13 +1816,13 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33987 strings out of 475119
- 663095 string characters out of 5765715
+ 34076 strings out of 475119
+ 665331 string characters out of 5765715
  1406566 words of memory out of 5000000
- 56086 multiletter control sequences out of 15000+600000
- 622586 words of font info for 94 fonts, out of 8000000 for 9000
+ 56163 multiletter control sequences out of 15000+600000
+ 633866 words of font info for 98 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 128i,13n,123p,1858b,1652s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,123p,1858b,2024s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{cite.0@qgrid} has been referenced but does not exist, replaced by a fixed one
 
@@ -1830,10 +1848,10 @@ pdfTeX warning (dest): name{cite.0@qrouting} has been referenced but does not ex
 pdfTeX warning (dest): name{cite.0@watkins} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Italic.pfb></usr/share/texmf-dist/fonts/type1/huerta/caladea/Caladea-Regular.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Bold.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-BoldItalic.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Italic.pfb></usr/share/texmf-dist/fonts/type1/google/carlito/Crlt-Regular.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Presentation.pdf (136 pages, 1663150 bytes).
+Output written on Presentation.pdf (142 pages, 1703001 bytes).
 PDF statistics:
- 965 PDF objects out of 1000 (max. 8388607)
- 764 compressed objects within 8 object streams
- 285 named destinations out of 1000 (max. 500000)
- 90 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1195 PDF objects out of 1200 (max. 8388607)
+ 932 compressed objects within 10 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

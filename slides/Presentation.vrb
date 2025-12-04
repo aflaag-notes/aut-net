@@ -1,0 +1,16 @@
+\frametitle{Example of a Multicast protocol}
+	\framesubtitle{Classification criteria: Context of use}
+
+	An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	This was the first RL-based protocol for multicast routing in WSNs, and it operates as follows:
+
+	\begin{itemize}
+		\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
+		\item routing to multiple destinations is defined as the \tbf{minimum cost multicast tree} starting at the source and reaching all interested destinations
+		\item the \tit{cost} of the \tit{Steiner-like tree} is defined as the number of one-hop broadcasts to reach all sinks
+	\end{itemize}

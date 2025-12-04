@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Presentation"] 1764837771.30006 "Presentation.aux" "Presentation.bbl" "Presentation" 1764837776.96381 0
+["bibtex Presentation"] 1764844998.7642 "Presentation.aux" "Presentation.bbl" "Presentation" 1764845725.62746 0
   "../src/references.bib" 1764836369.7958 2976 41173a734bd86345956ab02085605578 ""
-  "./Presentation-blx.bib" 1764837776.56472 344 b9a53cb296db97caea92c7ca383542c0 ""
+  "./Presentation-blx.bib" 1764845725.24617 344 b9a53cb296db97caea92c7ca383542c0 ""
   "/usr/share/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1755987285 65510 b1f696b0241395385f422f67543c37fd ""
-  "Presentation.aux" 1764837776.55872 12320 8ab40bae6c7ecf764424137e49304554 "pdflatex"
+  "Presentation.aux" 1764845725.24017 12451 9b55a215d3e9e7c554ce9dcf88d48433 "pdflatex"
   (generated)
   "Presentation.bbl"
   "Presentation.blg"
   (rewritten before read)
-["pdflatex"] 1764837771.38345 "Presentation.tex" "Presentation.pdf" "Presentation" 1764837776.96442 0
+["pdflatex"] 1764845719.46746 "Presentation.tex" "Presentation.pdf" "Presentation" 1764845725.62773 0
   "/usr/share/texmf-dist/fonts/enc/dvips/caladea/cld_prieif.enc" 1755987285 2909 0d9a00ce3f1df725b182b15dd24bf4a5 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/carlito/crlt_j4hweq.enc" 1755987285 3199 785d1f4f03ee0bb70108af8679871db0 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/carlito/crlt_zisnlb.enc" 1755987285 3105 fe84215d6e1e68b95a7d9a8041ee418c ""
@@ -265,13 +265,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763208245 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763208213 2061857 1fa1c5eda06642eaec32dd0d0ec75ddc ""
-  "Presentation.aux" 1764837776.55872 12320 8ab40bae6c7ecf764424137e49304554 "pdflatex"
-  "Presentation.bbl" 1764837771.36769 7813 c5c799462e0a9a2e6a46db7838bc7596 "bibtex Presentation"
-  "Presentation.nav" 1764837776.56572 5852 e813f84bda6d0c16f5ce35f0ea0b86aa "pdflatex"
-  "Presentation.out" 1764837776.55972 526 850a703f34b4a232bc7fff304d7018ef "pdflatex"
-  "Presentation.run.xml" 1764837776.56572 2607 c4ccbcffc25308ce3e756c85aee1c38c "pdflatex"
-  "Presentation.tex" 1764837763.63064 40189 f2e35e9407e6b6c5d532e7ff7b75c53f ""
-  "Presentation.toc" 1764837776.56572 217 1276a5452bde9b2588b650b1da7e9d47 "pdflatex"
+  "Presentation.aux" 1764845725.24017 12451 9b55a215d3e9e7c554ce9dcf88d48433 "pdflatex"
+  "Presentation.bbl" 1764844998.82479 7813 c5c799462e0a9a2e6a46db7838bc7596 "bibtex Presentation"
+  "Presentation.nav" 1764845725.24792 6047 18b7c507607abbc4eab80ba924540213 "pdflatex"
+  "Presentation.out" 1764845725.24217 526 850a703f34b4a232bc7fff304d7018ef "pdflatex"
+  "Presentation.run.xml" 1764845725.24792 2607 c4ccbcffc25308ce3e756c85aee1c38c "pdflatex"
+  "Presentation.tex" 1764845717.83315 44712 ff7ccc2ff40d143808a00cdade975448 ""
+  "Presentation.toc" 1764845725.24792 217 dbdc4e593ffb0ef0770e77a788d89083 "pdflatex"
   "assets/background.png" 1764707108.02644 241825 79d92ee3b5ca7e83294b4305bf475d50 ""
   "assets/logo_RGB.png" 1764707108.03444 494820 a10b3732d93cddcbd6928b39cd163f2b ""
   "assets/logo_RGB_negative.png" 1764707108.04044 547777 b363a1977408f693d33310188189080a ""

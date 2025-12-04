@@ -53,6 +53,7 @@
 
 \section{Introduction}
 
+\footlinecolor{maincolor}
 \begin{frame}{Motivation}
 	Modern networks have become far more complex, dynamic and diverse than early manually configured systems. This has made \tit{human} management \underline{insufficient}. \\
 
@@ -101,6 +102,8 @@
 
 	\vspace{0.8cm}
 
+	\pause
+
 	As already discussed throughout the lectures of this course, \tbf{Reinforcement Learning (RL)} is an ML technique inspired by behavioral psychology that provides system modeling based on \tit{agents} that interect with their \tit{environment}. \\
 
 	\vspace{0.8cm}
@@ -126,7 +129,7 @@
 
 		\vspace{0.8cm}
 
-		Very importantly, his approximation of the action function is \tit{independent of the policy} followed by the agents, making Q-learning applicable in a wide variety of contexts.
+		Very importantly, his approximation of the action function is \tit{independent of the policy} followed by the agent, making Q-learning applicable in a wide variety of contexts.
 
 		\onslide<3>
 
@@ -165,8 +168,6 @@
 	The paper that will be discussed today was published in 2019 by \textcite{mammeri}. \\
 
 	\vspace{0.8cm}
-
-	\pause
 
 	Their work is a review of \tbf{60 papers}, which essentially covers the literature of RL-based routing algorithms completely. \\
 
@@ -307,22 +308,22 @@
 	However, there are also problems arising from the algorithm itself, for instance the \textbf{Q-value freshness}: $\theta_j(d)$ is evaluated only upon packet transmission on a route, therefore if a route is not used for a long time its estimate becomes \textit{outdated}.
 \end{frame}
 
-\begin{frame}{From Q-routing to moden RL-based protocols}
-	Q-routing introduced the idea that routers can \tit{learn} optimal paths through experience rather than relying on fixed metrics. \\
-
-	\vspace{0.8cm}
-
-	\pause
-
-
-	As anticipated, its core principles laid the foundation for a \tit{wide range} of RL-driven routing algorithms developed in the following years. \\
-
-	\vspace{0.8cm}
-
-	\pause
-
-	Building on this early work, the literature now includes numerous protocols that extend and modify these ideas to address modern networking challenge.
-\end{frame}
+% \begin{frame}{From Q-routing to moden RL-based protocols}
+% 	Q-routing introduced the idea that routers can \tit{learn} optimal paths through experience rather than relying on fixed metrics. \\
+%
+% 	\vspace{0.8cm}
+%
+% 	\pause
+%
+%
+% 	As anticipated, its core principles laid the foundation for a \tit{wide range} of RL-driven routing algorithms developed in the following years. \\
+%
+% 	\vspace{0.8cm}
+%
+% 	\pause
+%
+% 	Building on this early work, the literature now includes numerous protocols that extend and modify these ideas to address modern networking challenge.
+% \end{frame}
 
 \section{Classification criteria}
 
@@ -340,6 +341,10 @@
 		\item \tbf{Design characteristics}: criteria based on the \tit{design} of the protocols
 		\item \tbf{Performance}: criteria based on qualitative evaluation on \tit{overhead} and \tit{metrics}
 	\end{enumerate}
+\end{frame}
+
+\begin{frame}{The criteria groups}
+	TODO add image
 \end{frame}
 
 \begin{frame}
@@ -419,12 +424,12 @@
 
 			      \begin{itemize}
 				      \item a source $s$ that has data to send to $d$ first sends a \tit{Route Request (RR)} packet, which is disseminated in the network
-				      \item each node can decide to partecipate or not: if a node agrees to partecipate, it selects thje next node to forward the RR to, and this process continues until $d$ is reached
+				      \item each node can decide to partecipate or not: if a node agrees to partecipate, it selects the next node to forward the RR to, and this process continues until $d$ is reached
 				      \item once a path is found, all packets $s \to d$ are routed through this path
 				      \item at the end of each transmission a feedback is sent back to $s$
 			      \end{itemize}
 
-			      Most protocols in this category are extensions to the \tbf{AODV protocol} \cite{aodv}.
+			      Most protocols in this category are extensions to the \tbf{AODV} protocol \cite{aodv}.
 		\end{enumerate}
 
 		\onslide<4>
@@ -477,7 +482,7 @@
 
 			      \begin{itemize}
 				      \item a \tit{central node} has a set of routing protocols candidates (e.g. AODV, DSDV, DSR, OLSR, GPSR, etc.) that can be used for forwarding packets to \tit{slave nodes}
-				      \item in each $\Delta t$ the central node selects a routing protocols and calculates the routing tables, which are then sent to slave nodes for internal configuration
+				      \item in each $\Delta t$ the central node selects a routing protocol and calculates the routing tables, which are then sent to slave nodes for internal configuration
 				      \item then, a feedback is collected by the central node about the performance of the protocol, which may make the central node change the current routing protocol for the next $\Delta t$
 			      \end{itemize}
 
@@ -490,7 +495,7 @@
 	\frametitle{Unicast or Multicast}
 	\framesubtitle{Classification criteria: Context of use}
 
-	Categorizing between \tbf{unicast or multicast} approaches is a natural choice, given the inherent \tit{overhead} that multicast routing protocols introduce. \\
+	Categorizing between \tbf{unicast} or \tbf{multicast} approaches is a natural choice, given the inherent \tit{overhead} that multicast routing protocols introduce. \\
 	\vspace{0.8cm}
 
 	\pause
@@ -498,29 +503,31 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Example of a Multicast protocol}
+	\frametitle{Unicast or Multicast}
 	\framesubtitle{Classification criteria: Context of use}
 
-	An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
+	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a Multicast protocol}
+		An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
 
-	\vspace{0.8cm}
+		\vspace{0.8cm}
 
-	\pause
+		\pause
 
-	This was the first RL-based protocol for multicast routing in WSN, and it operates as follows:
+		This was the first RL-based protocol for multicast routing in WSNs, and it operates as follows:
 
-	\begin{itemize}
-		\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
-		\item routing to multiple destinations is defined as the \tbf{minimum cost path} starting at the source and reacting all destinations interested
-		\item the \tit{cost} of a spanning tree is defined as the number of one-hop broadcasts to reach all sinks
-	\end{itemize}
+		\begin{itemize}
+			\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
+			\item routing to multiple destinations is defined as the \tbf{minimum cost multicast tree} starting at the source and reaching all interested destinations
+			\item the \tit{cost} of the \tit{Steiner-like tree} is defined as the number of one-hop broadcasts to reach all sinks
+		\end{itemize}
+	\end{colorblock}
 \end{frame}
 
 \begin{frame}
 	\frametitle{QoS metrics for optimization}
 	\framesubtitle{Classification criteria: Context of use}
 
-	The choice of the metrics is one of the most important aspects of a protocol. When multiple metrics are utilized, they are \tit{weighted} based on the importance --- which depends on the target application. \\
+	The choice of the \tbf{metrics} is one of the most important aspects of a protocol. When multiple metrics are utilized, they are \tit{weighted} based on the importance --- which depends on the target application. \\
 
 	\vspace{0.8cm}
 
@@ -543,7 +550,7 @@
 		\begin{itemize}
 			\item \tbf{bandwidth}: average bandwidth provided to sources
 			\item \tbf{throughput}: average amount of bytes delivered in the entire network per time unit
-			\item \tbf{path stability}: it indicates how a path between source and destination changes over time
+			\item \tbf{path stability}: change in path between source and destination over time
 			\item \tbf{energy consumption}: average energy consumption of the network
 		\end{itemize}
 
@@ -566,30 +573,32 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Example of a multi-metric protocol}
+	\frametitle{QoS metrics for optimization}
 	\framesubtitle{Classification criteria: Context of use}
 
-	The first protocol in the literature that considered \tit{multiple metrics} is the \tbf{AdaR (\tit{Adaptive Routing})}, proposed by \textcite{wang}. \\
+	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a multi-metric protocol}
+		The first protocol in the literature that considered \tit{multiple metrics} is the \tbf{AdaR (\tit{Adaptive Routing})}, proposed by \textcite{wang}. \\
 
-	\vspace{0.8cm}
+		\vspace{0.8cm}
 
-	\pause
+		\pause
 
-	In particular, they considered \tbf{four QoS metrics} for path selections:
+		In particular, they considered \tbf{four QoS metrics} for path selections:
 
-	\begin{itemize}
-		\item number of hops
-		\item residual energy
-		\item link reliability
-		\item number of routes crossing in a node
-	\end{itemize}
+		\begin{enumerate}
+			\item number of hops
+			\item residual energy
+			\item link reliability
+			\item number of routes crossing in a node
+		\end{enumerate}
+	\end{colorblock}
 \end{frame}
 
 \begin{frame}
 	\frametitle{QoS guaranteeing}
 	\framesubtitle{Classification criteria: Context of use}
 
-	Lastly, a few routing protocols are aimed at providing QoS guarantees, regarding delivery delay to meet some requirements of \tbf{delay-sensitive applications}. \\
+	Lastly, a few routing protocols are aimed at providing \tbf{QoS guarantees}, regarding delivery delay to meet some requirements of \tit{delay-sensitive applications}. \\
 
 	\vspace{0.8cm}
 
@@ -599,21 +608,23 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Example of a delay-aware protocol}
+	\frametitle{QoS guaranteeing}
 	\framesubtitle{Classification criteria: Context of use}
 
-	An example of a protocol that provides \tit{soft} delay guarantees to delay-sensitive applications was introduced by \textcite{lin}, called \tbf{RL-RPC (\tit{RL-based Routing and Power Control})}. \\
+	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a delay-aware protocol}
+		An example of a protocol that provides \tit{soft} delay guarantees to delay-sensitive applications was introduced by \textcite{lin}, called \tbf{RL-RPC (\tit{RL-based Routing and Power Control})}. \\
 
-	\vspace{0.8cm}
+		\vspace{0.8cm}
 
-	\pause
+		\pause
 
-	In this protocol, RL is used to learn \tbf{channel conditions}. Moreover
+		In this protocol, RL is used to learn \tbf{channel conditions}. Moreover
 
-	\begin{itemize}
-		\item at each node the protocol selects the best route and the best power to forward packets
-		\item a packet is dropped when the \tit{deadline} --- included in the packet --- can no more be satisfied
-	\end{itemize}
+		\begin{itemize}
+			\item at each node the protocol selects the best route and the best power to forward packets
+			\item a packet is dropped when the \tit{deadline} --- included in the packet --- can no more be satisfied
+		\end{itemize}
+	\end{colorblock}
 \end{frame}
 
 \begin{frame}
@@ -658,34 +669,98 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Example of a model-based protocol}
+	\frametitle{Learning model}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	For instance, the \tbf{QGrid (Q-learning-based Grid routing)} protocol introduced by \textcite{qgrid} is a model-based protocol for VANETs, since it is composed of two phases:
+	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a moded-based protocol}
+		For instance, the \tbf{QGrid (Q-learning-based Grid routing)} protocol introduced by \textcite{qgrid} is a model-based protocol for VANETs, since it is composed of two phases:
 
-	\begin{itemize}
-		\item \tit{offline learning} of Q-values
-		\item \tit{online use} of the Q-value table to forward packets
-	\end{itemize}
+		\begin{itemize}
+			\item \tit{offline learning} of Q-values
+			\item \tit{online use} of the Q-value table to forward packets
+		\end{itemize}
 
-	\vspace{0.8cm}
+		\vspace{0.8cm}
 
-	\pause
+		\begin{overprint}
+			\onslide<1>
 
-	A vehicle uses its offline Q-table to pick the \tit{next grid} and forwards the packet to a neighbor in that new grid; if none exists, it forwards to a closer neighbor, or otherwise stores the packet until a new neighbor appears. \\
+			A vehicle uses its offline Q-table to pick the \tit{next grid} and forwards the packet to a neighbor in that new grid; if none exists, it forwards to a closer neighbor, or otherwise stores the packet until a new neighbor appears. \\
 
-	\vspace{0.8cm}
+			\onslide<2>
 
-	\pause
 
-	The assumption is that in order to reach a some destination $d$ located in a given grid it is possible to infer the optimal paths to cross from the \tbf{history of inter-grid movements}.
+			The assumption of this protocol is that it is possible to infer the optimal path to reach some destination $d$ located in a given grid from the \tbf{history of inter-grid movements}.
+		\end{overprint}
+	\end{colorblock}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Agent states and Actions spaces}
+	\frametitle{Agent states}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	TODO
+	In order to apply RL to any optimization problem, we need some definition of the \tbf{state space}, the set of all possible states that the agent can be in. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	The definitions of state spaces in the reviewed literature include:
+
+	\begin{itemize}
+		\item set of \tit{nodes}, the most popular in RL-based routing protocols
+		\item set of \tit{grids}, used in grid-organized networks
+		\item set of \tit{couples}, relating to the dynamics of the nodes --- for instance in VANETs a \tit{couple} is a vehicle speed class together with its context of move (urban, highway, etc.)
+		\item set of \tit{paths} and their characteristics
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Actions spaces}
+	\framesubtitle{Classification criteria: Design characteristics}
+
+	Protocols can be also classified based on the \tbf{action space} they define. This table contains the possible \tit{single-type actions} and the corresponding \tit{action spaces}:
+
+	\begin{overprint}
+		\onslide<1>
+
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+				\hline
+				\textbf{Action selection}                                  & \textbf{Action space}         \\
+				\hline
+				Select node $j$ as next hop and forward packet             & Set of node IDs               \\
+				\hline
+				Select a subset of neighbors $S$ and broadcast packet      & Set of partitions of node IDs \\
+				\hline
+				Select output link $l$ and transmit packet                 & Set of links                  \\
+				\hline
+				Select grid $g$ and send packet to one of the nodes in $g$ & Set of grids                  \\
+				\hline
+			\end{tabular}
+		\end{table}
+
+		\onslide<2>
+
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+				\hline
+				\textbf{Action selection}                                                                      & \textbf{Action space}            \\
+				\hline
+
+				Select predefined path $p$ and send packet along $p$                                           & Set of predefined paths          \\
+				\hline
+				Allocate $m$ free channels                                                                     & Set of channels                  \\
+				\hline
+				Select a transmission power $pw$                                                               & Set of transmission power levels \\
+				\hline
+				Select a protocol $prt$ among a list of routing protocols and configure the network with $prt$ & Set of standard protocols        \\
+				\hline
+			\end{tabular}
+		\end{table}
+	\end{overprint}
 \end{frame}
 
 \begin{frame}
@@ -756,7 +831,7 @@
 
 		\vspace{0.8cm}
 
-		In particular \tit{collaboration} concerns both RL and non-RL related exchanges, such as the exchange of \tbf{link-state information}.
+		Note that \tit{collaboration} only concerns \tit{non}-RL related exchanges, such as the exchange of \tbf{link-state information}.
 
 		\onslide<2>
 
@@ -764,16 +839,9 @@
 
 		\begin{itemize}
 			\item \tbf{Reactive collaboration}: nodes only provide feedback upon reception of packet
-			\item \tbf{Proactive collaboration}: similar to the \tit{reactive} approach, but nodes additionally broadcast their link-state information through \tit{Hello packets} to their neightbors
+			\item \tbf{Proactive collaboration}: similar to the \tit{reactive} approach, but nodes additionally broadcast their link-state information through \tit{Hello packets} to their neighbors
 		\end{itemize}
 	\end{overprint}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Example of a proactive protocol}
-	\framesubtitle{Classification criteria: Design characteristics}
-
-	TODO find one
 \end{frame}
 
 \begin{frame}
@@ -810,16 +878,19 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Example of a hybrid protocol}
+	\frametitle{Hybridization with other optimization techniques}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	An example of a protocols that combines RL with other optimization techniques is \tbf{AdaR} (the first multi-metric protocol) \cite{wang}. \\
 
-	\vspace{0.8cm}
+	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a hybrid protocol}
+		An example of a protocol that combines RL with other optimization techniques is \tbf{AdaR} (the first multi-metric protocol) \cite{wang}. \\
 
-	\pause
+		\vspace{0.8cm}
 
-	In particular, AdaR uses \tbf{Least Squares Policy Iteration (LSPI)}, which indeed enables \tit{faster convergence} to optimal solution without suffering initial parameter setting.
+		\pause
+
+		In particular, AdaR uses \tbf{Least Squares Policy Iteration (LSPI)}, which indeed enables \tit{faster convergence} to optimal solution without suffering initial parameter setting.
+	\end{colorblock}
 \end{frame}
 
 \begin{frame}
@@ -847,8 +918,6 @@
 
 	The authors outline that the \tbf{reward function} is the most distinctive feature of existing RL-based routing protocols. \\
 
-	\vspace{0.8cm}
-
 	\pause
 
 	Reward functions may be categorized into 3 classes:
@@ -872,7 +941,7 @@
 			\item \tbf{Linear reward functions}: they have the following general form $$R = C + \sum_{k = 1}^H {\omega_k \cdot M_k}$$
 
 			      \begin{itemize}
-				      \item $C$ is a constant factor that depends on the test chosen by the protocols
+				      \item $C$ is a constant factor that depends on the test chosen by the protocol
 				      \item $H$ is the number of metrics of the protocol
 				      \item $\omega_k$ is the weight of the $k$-th metric
 				      \item $M_k$ is the value of the $k$-th metric
@@ -886,10 +955,6 @@
 			\item \tbf{Nonlinear reward functions}: this type is less common among RL-protocols, and they are designed with different forms of combinations of metrics depending on the specific application
 		\end{enumerate}
 	\end{overprint}
-\end{frame}
-
-\begin{frame}
-	some kind of exmaple idk i'm tired
 \end{frame}
 
 \begin{frame}
@@ -913,6 +978,8 @@
 \begin{frame}
 	\frametitle{Example of a non Q-learning compliant protocol}
 	\framesubtitle{Classification criteria: Design characteristics}
+
+	TODO maybe? and maybe remove something previously?
 \end{frame}
 
 \begin{frame}
@@ -952,7 +1019,7 @@
 		\onslide<3>
 
 		\begin{itemize}
-			\item \tbf{low overhead}: the chosen next hop returns a feedback in an explicit ACK packet, or it includes its feedback when, in turn, it (re)forwards the packet --- Half of the reviewed protocols fall under this category
+			\item \tbf{low overhead}: the chosen next hop returns a feedback in an explicit ACK packet, or it includes its feedback when, in turn, it (re)forwards the packet
 		\end{itemize}
 
 		\onslide<4>
@@ -993,13 +1060,13 @@
 		\onslide<2>
 
 		\begin{itemize}
-			\item \tbf{very low overhead}: then when state space is states of a packet TODO WHAT
+			\item \tbf{very low overhead}: when state space is the possible states of a packet
 		\end{itemize}
 
 		\onslide<3>
 
 		\begin{itemize}
-			\item \tbf{low overhead}: when the state space is the node IDs --- most of the reviewed papers fall under this category
+			\item \tbf{low overhead}: when the state space is the node IDs
 		\end{itemize}
 
 		\onslide<4>
@@ -1011,7 +1078,7 @@
 		\onslide<5>
 
 		\begin{itemize}
-			\item \tbf{high overhead}: when the state space is a list of whole paths with thier current characteristics
+			\item \tbf{high overhead}: when the state space is a list of whole paths with their current characteristics
 		\end{itemize}
 	\end{overprint}
 \end{frame}
@@ -1050,14 +1117,14 @@
 			      \begin{itemize}
 				      \item the number of \tit{dynamic paths}
 				      \item the number of or \tit{predefined paths}
-				      \item the number of \tit{grids} in the network --- WHAT ARE THESE
+				      \item the number of \tit{grids} in the network
 			      \end{itemize}
 		\end{itemize}
 
 		\onslide<5>
 
 		\begin{itemize}
-			\item \tbf{very high overhead}: when the state space depends on combinations of channels subsets or paths TODO WHAT?
+			\item \tbf{very high overhead}: when the state space depends on combinations of channels subsets or paths
 		\end{itemize}
 	\end{overprint}
 \end{frame}
@@ -1102,7 +1169,7 @@
 	\frametitle{Protocol performance (in simulations)}
 	\framesubtitle{Classification criteria: Performance aspects}
 
-	It would be clearly important to categorize the protocols based on the \tbf{performance} based on the simulations. However, given the
+	It would be clearly important to categorize the protocols based on the \tbf{performance} achieved in simulations. However, given the
 
 	\begin{itemize}
 		\item large number of reviewed protocols
@@ -1125,7 +1192,7 @@
 	RL is an efficient alternative to design routing protocols that
 
 	\begin{itemize}
-		\item provide \tbf{higher level} of QoS
+		\item provide higher level of QoS
 		\item optimize resource utilization
 	\end{itemize}
 
@@ -1153,16 +1220,16 @@
 \end{frame}
 
 \begin{frame}{Speed of convergence}
-	whenever large networks are considered, space exploration may take a very long time before optimal paths are discovered. This may result in poor end-to-end performance of the network. \\
+	Whenever large networks are considered, \tit{space exploration} may take a very long time before optimal paths are discovered. This may result in poor end-to-end performance of the network. \\
 	\vspace{0.8cm}
 
 	\pause
 
-	convergence rates should be investigated to provide \tbf{bounds} of delay for let users know when the network can or cannot provide \tit{acceptable QoS levels}.
+	\tbf{Convergence rates} should be investigated to provide \tbf{bounds} of delay for let users know when the network can or cannot provide \tit{acceptable QoS levels}.
 \end{frame}
 
 \begin{frame}{Link-state information dissemination}
-	In most protocols, \tbf{link-state information} is used to calculate metrics, hence the convergence of the routing algorithms strictly depends on the \tit{freshness} of disseminated link-state information. \\
+	In most protocols, \tbf{link-state information} is used to calculate metrics, hence the convergence of the routing algorithms strictly depends on the \tit{freshness} of disseminated information. \\
 
 	\vspace{0.8cm}
 
@@ -1189,7 +1256,51 @@
 \end{frame}
 
 \begin{frame}{Hybridization}
-	TODO todo
+	A few routing protocols have sufficiently reduced the search space by \tbf{hybridizing} the optimal-path search with external optimization techniques. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, the authors underline that this strategy is not explored enough. RL should be used \tit{jointly} with \tbf{other techniques} to provide more (soft) guarantees on exploration of the solution space.
+
+	\vspace{0.8cm}
+
+	\pause
+
+	In recent years \tbf{Deep Learning (DL)} has been proposed to enable RL to scale to complex problems.
+\end{frame}
+
+\begin{frame}{Predicting traffic demands}
+	Learning in current RL-based protocols is mainly based on \tbf{network-oriented metrics} like
+
+	\begin{itemize}
+		\item delays
+		\item loss rate
+		\item transmission success
+		\item mobility of nodes
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	However, \tbf{predicting traffic} from sources to destinations would result in more efficient selection of forwarders. Indeed, in \tit{supervised learning scenarios} traffic predicion has resulted in more efficient route selection.
+\end{frame}
+
+\begin{frame}{Cooperative learning}
+	Lastly, almost all proposed protocols are \tbf{independent-agent-based}. In fact even if the agents \curlyquotes{collaborate} by exchanging link-state information, they don't \tit{learn cooperatively}. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	To face complexity of future networks, the authors suggest to enable \tbf{collaboration} between agents to help design more robust and efficient learning approaches.
+\end{frame}
+
+\begin{frame}
+	\centering
+	{\fontsize{40}{48}\selectfont \textbf{Thanks for your attention}}
 \end{frame}
 
 \end{document}
