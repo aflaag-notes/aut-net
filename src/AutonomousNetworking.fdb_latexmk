@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex AutonomousNetworking"] 1764831346.83873 "AutonomousNetworking.aux" "AutonomousNetworking.bbl" "AutonomousNetworking" 1764831351.1368 0
+["bibtex AutonomousNetworking"] 1764836371.39835 "AutonomousNetworking.aux" "AutonomousNetworking.bbl" "AutonomousNetworking" 1764836371.48966 0
   "./AutonomousNetworking-blx.bib" 1764831350.74119 344 b9a53cb296db97caea92c7ca383542c0 ""
-  "./references.bib" 1764797324.23035 2603 f97a50f9cbbe0cb81f1e68102a0f8c71 ""
+  "./references.bib" 1764836369.7958 2976 41173a734bd86345956ab02085605578 ""
   "/usr/share/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1755987285 65510 b1f696b0241395385f422f67543c37fd ""
   "AutonomousNetworking.aux" 1764831350.70419 8479 7f6744395564f4b896875a0cde6da980 "pdflatex"
   (generated)
   "AutonomousNetworking.bbl"
   "AutonomousNetworking.blg"
   (rewritten before read)
-["pdflatex"] 1764831346.91625 "AutonomousNetworking.tex" "AutonomousNetworking.pdf" "AutonomousNetworking" 1764831351.13734 0
+["pdflatex"] 1764831346.91625 "AutonomousNetworking.tex" "AutonomousNetworking.pdf" "AutonomousNetworking" 1764836371.48994 0
   "../../packages/Nyx/logo.png" 1759341402.38967 91419 8de48debf770a599a084520c83ce5d80 ""
   "../../packages/Nyx/nyx-frames.sty" 1763494587.47954 4411 ae8501e3bb3ad8d6333aa8a36ec2cf41 ""
   "../../packages/Nyx/nyx-intro.sty" 1759341402.38967 3476 d82343305e561945eb7e4f3f9e3a4fe2 ""
@@ -414,7 +414,7 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763208245 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763208213 2061857 1fa1c5eda06642eaec32dd0d0ec75ddc ""
   "AutonomousNetworking.aux" 1764831350.70419 8479 7f6744395564f4b896875a0cde6da980 "pdflatex"
-  "AutonomousNetworking.bbl" 1764831346.90618 4232 b0a3584b4f0de6d45e28c25d1be13a57 "bibtex AutonomousNetworking"
+  "AutonomousNetworking.bbl" 1764836371.4638 4232 b0a3584b4f0de6d45e28c25d1be13a57 "bibtex AutonomousNetworking"
   "AutonomousNetworking.out" 1764831350.73719 5476 c895a0d14c3632cfd143f8989226dd54 "pdflatex"
   "AutonomousNetworking.run.xml" 1764831350.74326 2674 41472ec5bf54dc62f64dff95308e88f9 "pdflatex"
   "AutonomousNetworking.tex" 1764831337.52518 36929 9829895afc30709fe6377a75dba9c033 ""

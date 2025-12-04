@@ -459,7 +459,29 @@
 
 		\begin{enumerate}
 			\setcounter{enumi}{4}
-			\item \tbf{Cluster driven optimization}: TODO
+			\item \tbf{Cluster driven optimization context}:
+
+			      \begin{itemize}
+				      \item a \tit{cluster} is a partition of the nodes that has a \tit{cluster-head}
+				      \item data patckets are transmitted from $s$ to $d$ following a clustered hierarchy of the network
+				      \item a cluster-head determines the number of members that can join in the cluster depending on the resources
+				      \item after a transmission, cluster-heads receive feedback and adjust their cluster size accordingly
+			      \end{itemize}
+		\end{enumerate}
+
+		\onslide<7>
+
+		\begin{enumerate}
+			\setcounter{enumi}{5}
+			\item \tbf{Routing protocol driven optimization context}:
+
+			      \begin{itemize}
+				      \item a \tit{central node} has a set of routing protocols candidates (e.g. AODV, DSDV, DSR, OLSR, GPSR, etc.) that can be used for forwarding packets to \tit{slave nodes}
+				      \item in each $\Delta t$ the central node selects a routing protocols and calculates the routing tables, which are then sent to slave nodes for internal configuration
+				      \item then, a feedback is collected by the central node about the performance of the protocol, which may make the central node change the current routing protocol for the next $\Delta t$
+			      \end{itemize}
+
+			      After some $\Delta t$, the system converges to the most adequate routing protocol.
 		\end{enumerate}
 	\end{overprint}
 \end{frame}
@@ -639,7 +661,24 @@
 	\frametitle{Example of a model-based protocol}
 	\framesubtitle{Classification criteria: Design characteristics}
 
-	TODO QGrid!!
+	For instance, the \tbf{QGrid (Q-learning-based Grid routing)} protocol introduced by \textcite{qgrid} is a model-based protocol for VANETs, since it is composed of two phases:
+
+	\begin{itemize}
+		\item \tit{offline learning} of Q-values
+		\item \tit{online use} of the Q-value table to forward packets
+	\end{itemize}
+
+	\vspace{0.8cm}
+
+	\pause
+
+	A vehicle uses its offline Q-table to pick the \tit{next grid} and forwards the packet to a neighbor in that new grid; if none exists, it forwards to a closer neighbor, or otherwise stores the packet until a new neighbor appears. \\
+
+	\vspace{0.8cm}
+
+	\pause
+
+	The assumption is that in order to reach a some destination $d$ located in a given grid it is possible to infer the optimal paths to cross from the \tbf{history of inter-grid movements}.
 \end{frame}
 
 \begin{frame}

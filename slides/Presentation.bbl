@@ -76,6 +76,49 @@
     \field{year}{2007}
   \endentry
 
+  \entry{qgrid}{inproceedings}{}{}
+    \name{author}{4}{}{%
+      {{hash=LR}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Ruiling},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LF}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Fan},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xin},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yu},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{LRLFLX+1}
+    \strng{fullhash}{LRLFLXWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelalpha}{LLL+14}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{booktitle}{2014 IEEE 33rd international performance computing and communications conference (IPCCC)}
+    \field{pages}{1\bibrangedash 8}
+    \field{title}{QGrid: Q-learning based routing protocol for vehicular ad hoc networks}
+    \field{year}{2014}
+  \endentry
+
   \entry{lin}{article}{}{}
     \name{author}{2}{}{%
       {{hash=LZ}{%
