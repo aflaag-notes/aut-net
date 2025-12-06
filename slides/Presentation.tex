@@ -1194,110 +1194,110 @@
 	{\fontsize{40}{48}\selectfont \textbf{Thanks for your attention}}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Unicast or Multicast}
-	\framesubtitle{Classification criteria: Context of use}
-
-	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a Multicast protocol}
-		An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
-
-		\vspace{0.8cm}
-
-		\pause
-
-		This was the first RL-based protocol for multicast routing in WSNs, and it operates as follows:
-
-		\begin{itemize}
-			\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
-			\item routing to multiple destinations is defined as the \tbf{minimum cost multicast tree} starting at the source and reaching all interested destinations
-			\item the \tit{cost} of the \tit{Steiner-like tree} is defined as the number of one-hop broadcasts to reach all sinks
-		\end{itemize}
-	\end{colorblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{QoS metrics for optimization}
-	\framesubtitle{Classification criteria: Context of use}
-
-	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a multi-metric protocol}
-		The first protocol in the literature that considered \tit{multiple metrics} is the \tbf{AdaR (\tit{Adaptive Routing})}, proposed by \textcite{wang}. \\
-
-		\vspace{0.8cm}
-
-		\pause
-
-		In particular, they considered \tbf{four QoS metrics} for path selections:
-
-		\begin{enumerate}
-			\item number of hops
-			\item residual energy
-			\item link reliability
-			\item number of routes crossing in a node
-		\end{enumerate}
-	\end{colorblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{QoS guaranteeing}
-	\framesubtitle{Classification criteria: Context of use}
-
-	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a delay-aware protocol}
-		An example of a protocol that provides \tit{soft} delay guarantees to delay-sensitive applications was introduced by \textcite{lin}, called \tbf{RL-RPC (\tit{RL-based Routing and Power Control})}. \\
-
-		\vspace{0.8cm}
-
-		\pause
-
-		In this protocol, RL is used to learn \tbf{channel conditions}. Moreover
-
-		\begin{itemize}
-			\item at each node the protocol selects the best route and the best power to forward packets
-			\item a packet is dropped when the \tit{deadline} --- included in the packet --- can no more be satisfied
-		\end{itemize}
-	\end{colorblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Learning model}
-	\framesubtitle{Classification criteria: Design characteristics}
-
-	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a moded-based protocol}
-		For instance, the \tbf{QGrid (Q-learning-based Grid routing)} protocol introduced by \textcite{qgrid} is a model-based protocol for VANETs, since it is composed of two phases:
-
-		\begin{itemize}
-			\item \tit{offline learning} of Q-values
-			\item \tit{online use} of the Q-value table to forward packets
-		\end{itemize}
-
-		\vspace{0.8cm}
-
-		\begin{overprint}
-			\onslide<1>
-
-			A vehicle uses its offline Q-table to pick the \tit{next grid} and forwards the packet to a neighbor in that new grid; if none exists, it forwards to a closer neighbor, or otherwise stores the packet until a new neighbor appears. \\
-
-			\onslide<2>
-
-
-			The assumption of this protocol is that it is possible to infer the optimal path to reach some destination $d$ located in a given grid from the \tbf{history of inter-grid movements}.
-		\end{overprint}
-	\end{colorblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Hybridization with other optimization techniques}
-	\framesubtitle{Classification criteria: Design characteristics}
-
-
-	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a hybrid protocol}
-		An example of a protocol that combines RL with other optimization techniques is \tbf{AdaR} (the first multi-metric protocol) \cite{wang}. \\
-
-		\vspace{0.8cm}
-
-		\pause
-
-		In particular, AdaR uses \tbf{Least Squares Policy Iteration (LSPI)}, which indeed enables \tit{faster convergence} to optimal solution without suffering initial parameter setting.
-	\end{colorblock}
-\end{frame}
+% \begin{frame}
+% 	\frametitle{Unicast or Multicast}
+% 	\framesubtitle{Classification criteria: Context of use}
+%
+% 	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a Multicast protocol}
+% 		An example of a multicast protocol is the \tbf{FROMS (\tit{Feedback Routing for Optimizing Multiple Sinks})}, introduced by \textcite{forster}. \\
+%
+% 		\vspace{0.8cm}
+%
+% 		\pause
+%
+% 		This was the first RL-based protocol for multicast routing in WSNs, and it operates as follows:
+%
+% 		\begin{itemize}
+% 			\item it constructs a tree similar to a \tit{Steiner tree} with the selected paths
+% 			\item routing to multiple destinations is defined as the \tbf{minimum cost multicast tree} starting at the source and reaching all interested destinations
+% 			\item the \tit{cost} of the \tit{Steiner-like tree} is defined as the number of one-hop broadcasts to reach all sinks
+% 		\end{itemize}
+% 	\end{colorblock}
+% \end{frame}
+%
+% \begin{frame}
+% 	\frametitle{QoS metrics for optimization}
+% 	\framesubtitle{Classification criteria: Context of use}
+%
+% 	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a multi-metric protocol}
+% 		The first protocol in the literature that considered \tit{multiple metrics} is the \tbf{AdaR (\tit{Adaptive Routing})}, proposed by \textcite{wang}. \\
+%
+% 		\vspace{0.8cm}
+%
+% 		\pause
+%
+% 		In particular, they considered \tbf{four QoS metrics} for path selections:
+%
+% 		\begin{enumerate}
+% 			\item number of hops
+% 			\item residual energy
+% 			\item link reliability
+% 			\item number of routes crossing in a node
+% 		\end{enumerate}
+% 	\end{colorblock}
+% \end{frame}
+%
+% \begin{frame}
+% 	\frametitle{QoS guaranteeing}
+% 	\framesubtitle{Classification criteria: Context of use}
+%
+% 	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a delay-aware protocol}
+% 		An example of a protocol that provides \tit{soft} delay guarantees to delay-sensitive applications was introduced by \textcite{lin}, called \tbf{RL-RPC (\tit{RL-based Routing and Power Control})}. \\
+%
+% 		\vspace{0.8cm}
+%
+% 		\pause
+%
+% 		In this protocol, RL is used to learn \tbf{channel conditions}. Moreover
+%
+% 		\begin{itemize}
+% 			\item at each node the protocol selects the best route and the best power to forward packets
+% 			\item a packet is dropped when the \tit{deadline} --- included in the packet --- can no more be satisfied
+% 		\end{itemize}
+% 	\end{colorblock}
+% \end{frame}
+%
+% \begin{frame}
+% 	\frametitle{Learning model}
+% 	\framesubtitle{Classification criteria: Design characteristics}
+%
+% 	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a moded-based protocol}
+% 		For instance, the \tbf{QGrid (Q-learning-based Grid routing)} protocol introduced by \textcite{qgrid} is a model-based protocol for VANETs, since it is composed of two phases:
+%
+% 		\begin{itemize}
+% 			\item \tit{offline learning} of Q-values
+% 			\item \tit{online use} of the Q-value table to forward packets
+% 		\end{itemize}
+%
+% 		\vspace{0.8cm}
+%
+% 		\begin{overprint}
+% 			\onslide<1>
+%
+% 			A vehicle uses its offline Q-table to pick the \tit{next grid} and forwards the packet to a neighbor in that new grid; if none exists, it forwards to a closer neighbor, or otherwise stores the packet until a new neighbor appears. \\
+%
+% 			\onslide<2>
+%
+%
+% 			The assumption of this protocol is that it is possible to infer the optimal path to reach some destination $d$ located in a given grid from the \tbf{history of inter-grid movements}.
+% 		\end{overprint}
+% 	\end{colorblock}
+% \end{frame}
+%
+% \begin{frame}
+% 	\frametitle{Hybridization with other optimization techniques}
+% 	\framesubtitle{Classification criteria: Design characteristics}
+%
+%
+% 	\begin{colorblock}[sintefdarkgreen]{sinteflightgreen}{Example: a hybrid protocol}
+% 		An example of a protocol that combines RL with other optimization techniques is \tbf{AdaR} (the first multi-metric protocol) \cite{wang}. \\
+%
+% 		\vspace{0.8cm}
+%
+% 		\pause
+%
+% 		In particular, AdaR uses \tbf{Least Squares Policy Iteration (LSPI)}, which indeed enables \tit{faster convergence} to optimal solution without suffering initial parameter setting.
+% 	\end{colorblock}
+% \end{frame}
 
 \end{document}
